@@ -22,7 +22,7 @@ npm run build
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-Informations:
+### Informations:
 
 - Les composants sont des instances de Vue réutilisables
 - Le store, sera utilisé pour gérer les états et stocker les données

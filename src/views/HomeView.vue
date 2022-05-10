@@ -11,26 +11,12 @@
         </p>
       </div>
       <!-- Liste déroulante -->
-      <div class="dropdown is-active">
-        <div class="dropdown-trigger">
-          <button
-            class="button"
-            aria-haspopup="true"
-            aria-controls="dropdown-menu"
-          >
-            <span>OS</span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <a href="#" class="dropdown-item"> Windows </a>
-            <a class="dropdown-item"> Linux </a>
-            <a href="#" class="dropdown-item is-active"> MAC </a>
-          </div>
-        </div>
+      <div class="select is-link">
+        <select>
+          <option>Windows</option>
+          <option>Linux</option>
+          <option>MAC</option>
+        </select>
       </div>
       <!-- TABLEAU -->
       <table class="table">
