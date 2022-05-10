@@ -4,7 +4,12 @@
       <p class="panel-heading">Test Bulma</p>
       <div class="panel-block">
         <p class="control has-icons-left">
-          <input class="input is-info" type="text" placeholder="Logicel" />
+          <input
+            class="input is-info"
+            id="myInput"
+            type="text"
+            placeholder="Logicel"
+          />
           <span class="icon is-left">
             <i class="fas fa-search" aria-hidden="true"></i>
           </span>
@@ -28,7 +33,7 @@
             <th>MAC</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="myTable">
           <tr>
             <th>Firefox</th>
             <td>21</td>
@@ -66,11 +71,13 @@ export default {
     msg: String,
   },
 };
-$(".dropdown .button").click((e) => {
-  const dropdown = $(e.target).parents(".dropdown");
-  dropdown.toggleClass("is-active");
-  dropdown.focusout((e) => {
-    $(e.target).removeClass("is-active");
+
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
   });
 });
 </script>
