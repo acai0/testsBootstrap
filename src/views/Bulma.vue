@@ -8,7 +8,7 @@
             class="input is-info"
             id="myInput"
             type="text"
-            placeholder="Logicel"
+            placeholder="Recherche"
           />
           <span class="icon is-left">
             <i class="fas fa-search" aria-hidden="true"></i>
@@ -76,6 +76,7 @@ export default {
   */
 };
 
+// Fonction pour filtrer les noms
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
     var value = $(this).val().toLowerCase();

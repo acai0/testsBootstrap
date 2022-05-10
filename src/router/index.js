@@ -1,20 +1,23 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import Bulma from "../views/Bulma.vue";
+// voir ligne 19 import Bootstrap from "../views/Bootstrap.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "bulma",
+    component: Bulma,
   },
   {
     path: "/bootstrap",
     name: "bootstrap",
+
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      // Une autre version de import Bootstrap from "../views/Bootstrap.vue"
+      import(/* webpackChunkName: "about" */ "../views/Bootstrap.vue"),
   },
 ];
 
