@@ -25,14 +25,16 @@
       </div>
       <!-- TABLEAU -->
       <table class="table">
+        <!-- Noms titres des colonnes -->
         <thead>
           <tr>
-            <th>Logiciel</th>
+            <th>Logiciels</th>
             <th>Windows</th>
             <th>Linux</th>
             <th>MAC</th>
           </tr>
         </thead>
+        <!-- Contenu du tableau -->
         <tbody id="myTable">
           <tr>
             <th>Firefox</th>
@@ -66,10 +68,12 @@
 
 <script>
 export default {
+  /*
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  */
 };
 
 $(document).ready(function () {

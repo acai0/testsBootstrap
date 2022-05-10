@@ -20,38 +20,40 @@
       <!-- possible d'enlever table-bordered pour enlever le contour du tableau -->
       <!-- table-striped correspond aux lignes grisées 1 fois sur 2 du tableau, possible de l'enlever-->
       <table class="table table-bordered table-striped">
+        <!-- Noms titres des colonnes -->
         <thead>
           <tr>
-            <th id="logiciel">Logiciel</th>
-            <th id="windows">Version Windows</th>
-            <th id="linux">Version Linux</th>
-            <th id="mac">Version MAC</th>
+            <th>Logiciels</th>
+            <th>Version Windows</th>
+            <th>Version Linux</th>
+            <th>Version MAC</th>
           </tr>
         </thead>
+        <!-- Contenu du tableau -->
         <tbody id="myTable">
           <tr>
-            <td id="logiciel">Firefox</td>
-            <td id="windows">21</td>
-            <td id="linux">10.0</td>
-            <td id="mac">35</td>
+            <td>Firefox</td>
+            <td>21</td>
+            <td>10.0</td>
+            <td>35</td>
           </tr>
           <tr>
-            <td id="logiciel">Adobe Reader</td>
-            <td id="windows">2002.001.208</td>
-            <td id="linux">32</td>
-            <td id="mac"></td>
+            <td>Adobe Reader</td>
+            <td>2002.001.208</td>
+            <td>32</td>
+            <td></td>
           </tr>
           <tr>
-            <td id="logiciel">VLC</td>
-            <td id="windows">15</td>
-            <td id="linux"></td>
-            <td id="mac">14.8</td>
+            <td>VLC</td>
+            <td>15</td>
+            <td></td>
+            <td>14.8</td>
           </tr>
           <tr>
-            <td id="logiciel">Ubuntu</td>
-            <td id="windows">20.04</td>
-            <td id="linux">18.04</td>
-            <td id="mac">20.04</td>
+            <td>Ubuntu</td>
+            <td>20.04</td>
+            <td>18.04</td>
+            <td>20.04</td>
           </tr>
         </tbody>
       </table>
