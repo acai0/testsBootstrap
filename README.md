@@ -27,7 +27,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Les composants sont des instances de Vue réutilisables
 - Le store, sera utilisé pour gérer les états et stocker les données
 - main.js servira pour faire des appel à des API en utilisant axios (bibliothèque Javascript)
-  Exemple d'appel à une API:
+- Exemple d'appel à une API:
   ```
   Vue.prototype.$api =axios.create({
   baseURL:"https:allweb.fun/coop/api/",
