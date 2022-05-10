@@ -19,7 +19,7 @@
       <!-- TABLEAU -->
       <!-- possible d'enlever table-bordered pour enlever le contour du tableau -->
       <!-- table-striped correspond aux lignes grisées 1 fois sur 2 du tableau, possible de l'enlever-->
-      <table id="sort" class="table table-bordered table-striped">
+      <table class="table table-bordered table-striped">
         <thead>
           <tr>
             <th id="logiciel">Logiciel</th>
@@ -68,9 +68,5 @@ $(document).ready(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
-});
-
-$(document).ready(function () {
-  $("#sort").DataTable();
 });
 </script>
