@@ -9,58 +9,46 @@
         placeholder="Recherche"
       />
       <br />
-      <div class="dropdown show">
-        <a
-          class="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="dropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          OS
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Windows</a>
-          <a class="dropdown-item" href="#">Linux</a>
-          <a class="dropdown-item" href="#">MAC</a>
-        </div>
-      </div>
+      <!-- LISTE DEROULANTE -->
+      <select class="select" data-mdb-filter="true">
+        <option value="1">Windows</option>
+        <option value="2">Linux</option>
+        <option value="3">MAC</option>
+      </select>
+      <!-- TABLEAU -->
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
-            <th>Logiciel</th>
-            <th>Version Windows</th>
-            <th>Version Linux</th>
-            <th>Version MAC</th>
+            <th id="logiciel">Logiciel</th>
+            <th id="windows">Version Windows</th>
+            <th id="linux">Version Linux</th>
+            <th id="mac">Version MAC</th>
           </tr>
         </thead>
         <tbody id="myTable">
           <tr>
-            <td>Firefox</td>
-            <td>21</td>
-            <td>10.0</td>
-            <td>35</td>
+            <td id="logiciel">Firefox</td>
+            <td id="windows">21</td>
+            <td id="linux">10.0</td>
+            <td id="mac">35</td>
           </tr>
           <tr>
-            <td>Adobe Reader</td>
-            <td>2002.001.208</td>
-            <td>32</td>
-            <td></td>
+            <td id="logiciel">Adobe Reader</td>
+            <td id="windows">2002.001.208</td>
+            <td id="linux">32</td>
+            <td id="mac"></td>
           </tr>
           <tr>
-            <td>VLC</td>
-            <td>15</td>
-            <td></td>
-            <td>14.8</td>
+            <td id="logiciel">VLC</td>
+            <td id="windows">15</td>
+            <td id="linux"></td>
+            <td id="mac">14.8</td>
           </tr>
           <tr>
-            <td>Ubuntu</td>
-            <td>20.04</td>
-            <td>18.04</td>
-            <td>20.04</td>
+            <td id="logiciel">Ubuntu</td>
+            <td id="windows">20.04</td>
+            <td id="linux">18.04</td>
+            <td id="mac">20.04</td>
           </tr>
         </tbody>
       </table>
@@ -69,6 +57,8 @@
 </template>
 
 <script>
+export default {};
+
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
     var value = $(this).val().toLowerCase();
