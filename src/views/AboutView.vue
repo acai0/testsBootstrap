@@ -2,6 +2,7 @@
   <div class="about">
     <div class="container">
       <h2>Test Bootstrap</h2>
+      <!-- Filtrer pour la recherche par nom -->
       <input
         class="form-control"
         id="myInput"
@@ -16,7 +17,9 @@
         <option value="3">MAC</option>
       </select>
       <!-- TABLEAU -->
-      <table class="table table-bordered table-striped">
+      <!-- possible d'enlever table-bordered pour enlever le contour du tableau -->
+      <!-- table-striped correspond aux lignes grisées 1 fois sur 2 du tableau, possible de l'enlever-->
+      <table id="sort" class="table table-bordered table-striped">
         <thead>
           <tr>
             <th id="logiciel">Logiciel</th>
@@ -58,7 +61,6 @@
 
 <script>
 export default {};
-
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
     var value = $(this).val().toLowerCase();
@@ -66,5 +68,9 @@ $(document).ready(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
+});
+
+$(document).ready(function () {
+  $("#sort").DataTable();
 });
 </script>

@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">Bulma</router-link> |
-      <router-link to="/about">Bootstrap</router-link> |
+      <router-link to="/bootstrap">Bootstrap</router-link> |
     </nav>
     <router-view />
   </div>
