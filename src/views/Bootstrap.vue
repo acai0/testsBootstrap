@@ -33,7 +33,13 @@
         <tbody id="myTable">
           <tr>
             <td>Firefox</td>
-            <td>21</td>
+                         <td>  
+               <select class="select" data-mdb-filter="true">
+          <option>35</option>
+          <option>21.04</option>
+          <option>21</option>
+      </select>
+      </td>
             <td>10.0</td>
             <td>35</td>
           </tr>
@@ -53,7 +59,13 @@
             <td>Ubuntu</td>
             <td>20.04</td>
             <td>18.04</td>
-            <td>20.04</td>
+             <td>  
+               <select class="select" data-mdb-filter="true">
+        <option value="1">20.04</option>
+        <option value="2">18.04</option>
+        <option value="3">16.04</option>
+      </select>
+      </td>
           </tr>
         </tbody>
       </table>

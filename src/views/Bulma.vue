@@ -38,7 +38,14 @@
         <tbody id="myTable">
           <tr>
             <th>Firefox</th>
-            <td>21</td>
+      <td><div class="select is-link">
+        <select>
+          <option>35</option>
+          <option>21.04</option>
+          <option>21</option>
+        </select>
+      </div>
+      </td>
             <td>10.0</td>
             <td>35</td>
           </tr>
@@ -58,7 +65,14 @@
             <th>Ubuntu</th>
             <td>20.04</td>
             <td>18.04</td>
-            <td>20.04</td>
+      <td><div class="select is-link">
+        <select>
+<option value="1">20.04</option>
+        <option value="2">18.04</option>
+        <option value="3">16.04</option>
+        </select>
+      </div>
+      </td>
           </tr>
         </tbody>
       </table>
@@ -89,18 +103,5 @@ $(document).ready(function () {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
