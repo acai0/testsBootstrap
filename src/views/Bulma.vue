@@ -38,14 +38,15 @@
         <tbody id="myTable">
           <tr>
             <th>Firefox</th>
-      <td><div class="select is-link">
-        <select>
-          <option>35</option>
-          <option>21.04</option>
-          <option>21</option>
-        </select>
-      </div>
-      </td>
+            <td>
+              <div class="select is-link">
+                <select>
+                  <option>35</option>
+                  <option>21.04</option>
+                  <option>21</option>
+                </select>
+              </div>
+            </td>
             <td>10.0</td>
             <td>35</td>
           </tr>
@@ -65,14 +66,15 @@
             <th>Ubuntu</th>
             <td>20.04</td>
             <td>18.04</td>
-      <td><div class="select is-link">
-        <select>
-<option value="1">20.04</option>
-        <option value="2">18.04</option>
-        <option value="3">16.04</option>
-        </select>
-      </div>
-      </td>
+            <td>
+              <div class="select is-link">
+                <select>
+                  <option value="1">20.04</option>
+                  <option value="2">18.04</option>
+                  <option value="3">16.04</option>
+                </select>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -81,14 +83,6 @@
 </template>
 
 <script>
-export default {
-  /*
-  name: "HelloWorld",
-  props: {
-    msg: String,
-  },
-  */
-};
 
 // Fonction pour filtrer les noms
 $(document).ready(function () {
@@ -103,5 +97,4 @@ $(document).ready(function () {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

@@ -4,6 +4,7 @@
       <!-- Navigation "menu" qui va être utilisée sur toute les pages views-->
       <router-link to="/">Bulma</router-link> |
       <router-link to="/bootstrap">Bootstrap</router-link> |
+      <router-link to="/test">Test</router-link>
     </nav>
     <router-view />
   </div>

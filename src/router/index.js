@@ -19,6 +19,13 @@ const routes = [
       // Une autre version de import Bootstrap from "../views/Bootstrap.vue"
       import(/* webpackChunkName: "about" */ "../views/Bootstrap.vue"),
   },
+  {
+    path: "/test",
+    name: "test",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Test.vue"),
+  },
 ];
 
 const router = new VueRouter({
