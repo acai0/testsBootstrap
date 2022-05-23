@@ -21,7 +21,7 @@
     </b-form>
     
     <!-- Tableau -->
-    <b-table :items="items" :fields="visibleFields" bordered striped hover :filter="keyword"> </b-table>
+    <b-table :items="items" :fields="visibleFields" striped hover :filter="keyword"> </b-table>
     </v-table>
   </div>
 </template>
