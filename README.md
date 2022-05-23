@@ -23,7 +23,7 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Informations:
-- Lien pour avoir un aperçu https://627a59fd50d7960d7883215d--profound-cheesecake-5ad278.netlify.app/
+- Lien pour avoir un aperçu https://testsbootstrap.netlify.app/
 - Les composants sont des instances de Vue réutilisables
 - Le store, sera utilisé pour gérer les états et stocker les données
 - main.js servira pour faire des appel à des API en utilisant axios (bibliothèque Javascript)
