@@ -26,6 +26,13 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Test.vue"),
   },
+  {
+    path: "/tag",
+    name: "tag",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Tag.vue"),
+  },
 ];
 
 const router = new VueRouter({

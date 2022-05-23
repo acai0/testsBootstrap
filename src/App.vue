@@ -1,11 +1,18 @@
 <template>
   <div id="app">
+  
+  <!--
     <nav>
+    -->
       <!-- Navigation "menu" qui va être utilisée sur toute les pages views-->
+      <!--
       <router-link to="/">Bulma</router-link> |
       <router-link to="/bootstrap">Bootstrap</router-link> |
-      <router-link to="/test">Test</router-link>
+      <router-link to="/test">Test</router-link> |
+      <router-link to="/nav">Navbar</router-link>
     </nav>
+    -->
+       <Navigation />
     <router-view />
   </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <article class="panel is-info">
-      <p class="panel-heading">Test Bulma</p>
       <div class="panel-block">
         <p class="control has-icons-left">
           <input
@@ -28,7 +27,7 @@
         <!-- Noms titres des colonnes -->
         <thead>
           <tr>
-            <th>Logiciels</th>
+            <th>Packages</th>
             <th>Windows</th>
             <th>Linux</th>
             <th>MAC</th>
@@ -83,7 +82,6 @@
 </template>
 
 <script>
-
 // Fonction pour filtrer les noms
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
@@ -96,5 +94,4 @@ $(document).ready(function () {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

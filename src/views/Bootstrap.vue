@@ -1,7 +1,6 @@
 <template>
   <div class="about">
     <div class="container">
-      <h2>Test Bootstrap</h2>
       <!-- Filtrer pour la recherche par nom -->
       <input
         class="form-control"
@@ -17,16 +16,14 @@
         <option value="3">MAC</option>
       </select>
       <!-- TABLEAU -->
-      <!-- possible d'enlever table-bordered pour enlever le contour du tableau -->
-      <!-- table-striped correspond aux lignes grisées 1 fois sur 2 du tableau, possible de l'enlever-->
-      <table class="table table-bordered table-striped">
+      <table class="table">
         <!-- Noms titres des colonnes -->
         <thead>
           <tr>
-            <th>Logiciels</th>
+            <th>Packages</th>
             <th>Version Windows</th>
-            <th>Version Linux</th>
-            <th>Version MAC</th>
+            <th>Version Ubuntu</th>
+            <th>Version MacOS</th>
           </tr>
         </thead>
         <!-- Contenu du tableau -->
@@ -71,7 +68,7 @@
       </table>
     </div>
   </div>
-</template>
+</template> 
 
 <script>
 // Fonction pour filtrer des noms
