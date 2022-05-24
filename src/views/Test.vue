@@ -21,7 +21,7 @@
     </b-form>
     
     <!-- Tableau -->
-    <b-table :items="items" :fields="visibleFields" striped hover :filter="keyword"> </b-table>
+    <b-table :items="items" :fields="visibleFields" hover :filter="keyword"> </b-table>
     </v-table>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
 
       /* Champs tableau*/
       fields: [
-        { key: "package", label: "Package", visible: true, sortable: true },
+        { key: "package", label: "Packages", visible: true, sortable: true },
         { key: "windows", label: "Windows", visible: true, sortable: true },
         { key: "linux", label: "Linux", visible: true, sortable: true },
         { key: "macos", label: "Mac OS", visible: true, sortable: true },
