@@ -47,6 +47,20 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Table.vue"),
   },
+  {
+    path: "/accordeon",
+    name: "accordeon",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Accordeon.vue"),
+  },
+  {
+    path: "/accordiontest",
+    name: "accordiontest",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Accordiontest.vue"),
+  },
 ];
 
 const router = new VueRouter({

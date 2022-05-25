@@ -11,13 +11,15 @@
       </b-col>
       <b-col md="2" class="mb-2">
         <!-- Navbar dropdowns -->
-        <b-nav-item-dropdown text="Page">
+        <b-nav-item-dropdown text="Page" center>
           <b-dropdown-item href="/">Bulma</b-dropdown-item>
           <b-dropdown-item href="bootstrap">Bootstrap</b-dropdown-item>
           <b-dropdown-item href="test">Test</b-dropdown-item>
           <b-dropdown-item href="tag">Tag</b-dropdown-item>
           <b-dropdown-item href="cell">Cell</b-dropdown-item>
            <b-dropdown-item href="Table">Table</b-dropdown-item>
+           <b-dropdown-item href="Accordeon">Accordeon</b-dropdown-item>
+              <b-dropdown-item href="Accordiontest">AccordeonTest</b-dropdown-item>
         </b-nav-item-dropdown>
         </b-col>
       </b-navbar-nav> 
@@ -38,15 +40,21 @@
 export default{}
 </script>
 <style scoped>
+.container{
+    display: flex;
+    align-items: center;
+}
  .navbar{
     background-color: #2c3e50!important;
+    color:#ffff;
+    text-decoration:none;
+    justify-content:center;
+    line-height:70px;
+
  }
  img{
    width:auto;
    height:auto;
  }
- .nav-item-dropdown{
-   color: #eef2f7!important;
-   text-decoration:none;
- }
+
 </style>

@@ -19,14 +19,13 @@
       <b-col>
         <b-dropdown text="Système d'exploitation">
           <b-checkbox
-            :disabled="visibleFields.length == 1 && field.visible"
-            v-for="field in showFields"
-            :key="field.key"
-            v-model="field.visible"
-            block
+            :disabled="visibleFields.length == 1 && champ.visible"
+            v-for="champ in showFields"
+            :key="champ.key"
+            v-model="champ.visible"
           >
             <!-- Affichage du nom des checkbox -->
-            {{ field.label }}
+            {{ champ.label }}
           </b-checkbox>
         </b-dropdown>
       </b-col>
@@ -72,28 +71,27 @@
       return {
         keyword: "",
         items: [
-          { intitule: 'VLC', packageWin: 'vlc', versionWin: '3.0.17.4', packageU: 'vlc', versionU: '3.0.9.2', packageMac: 'vlc', versionMac: '3.0.17.3' },
-          { intitule: 'Firefox', packageWin: 'firefox', versionWin: '100.0.2', packageU: 'firefox', versionU: '100.0.2', packageMac: 'firefox', versionMac:'100.0.2' },
-          { intitule: 'Chrome', packageWin: 'googlechrome', versionWin: '102.0.5005.63', packageU: 'google-chrome-stable', versionU: '102.0.5005.63', packageMac: 'google-chrome', versionMac: '102.0.5005.61' },
-          { intitule: 'Adobe Reader', packageWin: 'simnetsa-adobereader-fr', versionWin: '11.0.7', packageU: 'acroread-bin acroread-common', versionU: '9.5.5', packageMac: 'adobe-acrobat-reader', versionMac: '22.001.20112' },
-          { intitule: 'Julia', packageWin: 'julia', versionWin: '1.7.2', packageU:'', versionU:'' , packageMac:'', versionMac:''},
+          { intitule: 'VLC', windows:{packageWin: 'vlc', versionWin: '3.0.17.4'}, ubuntu:{packageU: 'vlc', versionU: '3.0.9.2'}, macos:{packageMac: 'vlc', versionMac: '3.0.17.3'} },
+          { intitule: 'Firefox', windows:{packageWin: 'firefox', versionWin: '100.0.2'}, ubuntu:{packageU: 'firefox', versionU: '100.0.2'}, macos:{packageMac: 'firefox', versionMac:'100.0.2'} },
+          { intitule: 'Chrome', windows:{packageWin: 'googlechrome', versionWin: '102.0.5005.63'}, ubuntu:{packageU: 'google-chrome-stable', versionU: '102.0.5005.63'}, macos:{packageMac: 'google-chrome', versionMac: '102.0.5005.61'} },
+          { intitule: 'Adobe Reader', windows:{packageWin: 'simnetsa-adobereader-fr', versionWin: '11.0.7'}, ubuntu:{packageU: 'acroread-bin acroread-common', versionU: '9.5.5'}, macos:{packageMac: 'adobe-acrobat-reader', versionMac: '22.001.20112'} },
+          { intitule: 'Julia', windows:{packageWin: 'julia', versionWin: '1.7.2'}, ubuntu:{packageU:'', versionU:''} , macos:{packageMac:'', versionMac:''}},
         ],
         fields: [
           //'name',
           {key: 'intitule', label: ' ', sortable:true, visible: true},
-          { key: 'packageWin', label: 'Paquet', sortable:true, visible: true },
-          { key: 'versionWin', label: 'Version', sortable:true, visible: true },
-          { key: 'packageU', label: 'Paquet', sortable:true, visible: true },
-          { key: 'versionU', label: 'Version', sortable:true, visible: true },
-          { key: 'packageMac', label: 'Paquet', sortable:true, visible: true },
-          { key: 'versionMac', label: 'Version', sortable:true, visible: true }
+          { key: 'windows.packageWin', label: 'Paquet', sortable:true, visible: true },
+          { key: 'windows.versionWin', label: 'Version', sortable:true, visible: true },
+          { key: 'ubuntu.packageU', label: 'Paquet', sortable:true, visible: true },
+          { key: 'ubuntu.versionU', label: 'Version', sortable:true, visible: true },
+          { key: 'macos.packageMac', label: 'Paquet', sortable:true, visible: true },
+          { key: 'macos.versionMac', label: 'Version', sortable:true, visible: true }
         ],
-         /* Champs tableau*/
+         /* Champs tableau, visible= checked*/
       champs: [
-        { key: "intitule", label: "INTITULÉ", visible: true},
-        { key: "windows", label: "WINDOWS", visible: true},
-        { key: "ubuntu", label: "UBUNTU", visible: true},
-        { key: "macos", label: "MACOS", visible: true},
+        { key: "windows", label: "Windows", visible: true },
+        { key: "ubuntu", label: "Ubuntu", visible: true},
+        { key: "macos", label: "MacOS", visible: true},
       ],
       }
     },
@@ -107,11 +105,11 @@
 
     /* Afficher les checkbox */
     showFields() {
-      return this.fields.filter(
-        (field) =>
-          field.key.includes("intitule") ||
-          field.key.includes("packageWin") ||
-          field.key.includes("versionWin")
+      return this.champs.filter(
+        (champ) =>
+          champ.key.includes("windows") ||
+          champ.key.includes("ubuntu") ||
+          champ.key.includes("macos")
       );
     },
   },
