@@ -31,26 +31,6 @@
         </b-dropdown>
       </b-col>
     </b-row>
-    <b-thead head-variant="dark">
-      <b-tr>
-        <b-th colspan="1" class="text-info">Packages</b-th>
-        <b-th colspan="3">Windows</b-th>
-        <b-th colspan="3">Ubuntu</b-th>
-        <b-th colspan="3">Mac OS</b-th>
-      </b-tr>
-      <b-tr>
-        <b-th> </b-th>
-        <b-th> </b-th>
-        <b-th>Packages</b-th>
-        <b-th>Versions</b-th>
-        <b-th> </b-th>
-        <b-th>Packages</b-th>
-        <b-th>Versions</b-th>
-        <b-th> </b-th>
-        <b-th>Packages</b-th>
-        <b-th>Versions</b-th>
-      </b-tr>
-    </b-thead>
     <b-col>
       <b-table :items="items" :fields="visibleFields" hover :filter="keyword">
       </b-table>
