@@ -61,6 +61,13 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Accordiontest.vue"),
   },
+  {
+    path: "/collapse",
+    name: "collapse",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Collapse.vue"),
+  },
 ];
 
 const router = new VueRouter({

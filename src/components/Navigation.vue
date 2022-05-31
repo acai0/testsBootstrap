@@ -3,25 +3,62 @@
   <div>
     <b-navbar>  
     <b-container>
-    <b-row align-v="stretch">
-    <b-col md="3" class="mb-3">
-      <a class="navbar-brand mr-0 mr-md-2" href="/">
-      <b-img :src="require('../assets/logo.png')" fluid></b-img>
+       <b-navbar-brand><b-img
+          :src="require('../assets/logoUL.png')"
+          style="max-width: 120px"
+        /></b-navbar-brand>
+
+        <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item href="/"><b-img
+          :src="require('../assets/logo.png')"
+          style="max-width: 120px"
+        /></b-nav-item>
+      </b-navbar-nav>
+      </b-collapse>
+      <!--
+      <b-col md="1">
+      <a class="navbar-brand" href="/">
+        <b-img
+          :src="require('../assets/logo.png')"
+          style="max-width: 120px"
+        />
       </a>
       </b-col>
-      <b-col md="2" class="mb-2">
+-->
         <!-- Navbar dropdowns -->
+        <b-navbar>
         <b-nav-item-dropdown text="Page" center>
           <b-dropdown-item href="/">Bulma</b-dropdown-item>
           <b-dropdown-item href="bootstrap">Bootstrap</b-dropdown-item>
           <b-dropdown-item href="test">Test</b-dropdown-item>
           <b-dropdown-item href="tag">Tag</b-dropdown-item>
           <b-dropdown-item href="cell">Cell</b-dropdown-item>
-           <b-dropdown-item href="Table">Table</b-dropdown-item>
-           <b-dropdown-item href="Accordeon">Accordeon</b-dropdown-item>
-              <b-dropdown-item href="Accordiontest">AccordeonTest</b-dropdown-item>
+          <b-dropdown-item href="Table">Table</b-dropdown-item>
+          <b-dropdown-item href="Accordeon">Accordeon</b-dropdown-item>
+          <b-dropdown-item href="Accordiontest">AccordeonTest</b-dropdown-item>
+          <b-dropdown-item href="Collapse">Collapse</b-dropdown-item>
         </b-nav-item-dropdown>
-        </b-col>
+        </b-navbar>
+
+              <b-col md="4" class="position-absolute bottom end-0">
+        <div class="input-group mb-1">
+          <input
+            id="myInput"
+            type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+            placeholder="Filtrer par tag, nom de paquet, OS, ..."
+          />
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+        </div>
+      </b-col>
+
       </b-navbar-nav> 
       </b-row> 
       </b-container>
@@ -37,25 +74,37 @@
  
 </template>
 <script>
+// Fonction pour filtrer des noms
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#myTable button").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
 export default{}
 </script>
 <style scoped>
-.container{
-    display: flex;
-    align-items: center;
+.container {
+  display: flex;
+  align-items: center;
+  color: #ffff;
 }
- .navbar{
-    background-color: #2c3e50!important;
-    color:#ffff;
-    text-decoration:none;
-    justify-content:center;
-    line-height:70px;
+.navbar {
+  background-color: #2c3e50 !important;
+  color: #fff;
+  text-decoration: none;
+  justify-content: center;
+  line-height: 15px;
+  padding-bottom: 0px;
+}
 
- }
- img{
-   width:auto;
-   height:auto;
- }
-
+.link {
+  color: #fff;
+}
+.nav-item-dropdown {
+  color: #ffff;
+}
 
 </style>

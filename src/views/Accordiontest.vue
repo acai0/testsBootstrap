@@ -1,21 +1,12 @@
 <template>
-  <div class="container">
-   <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Catalogue des logiciels
-                <input
-        class="form-control"
-        id="myInput"
-        type="text"
-        placeholder="Recherche"
-      />
-      </div>
-
+    <div class="header">
+        <br> </br>
+          <h4>Catalogue d'applications</h4>
 <div class="container">
+
       <div class="accordion" id="accordionFlushExample">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
+          <h2 class="accordion-header" id="myTable">
             <button
               class="accordion-button collapsed"
               type="button"
@@ -83,7 +74,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
+          <h2 class="accordion-header" id="myTable">
             <button
               class="accordion-button collapsed"
               type="button"
@@ -149,7 +140,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
+          <h2 class="accordion-header" id="myTable">
             <button
               class="accordion-button collapsed"
               type="button"
@@ -212,14 +203,13 @@
                 <td></td>
               </tr>
               </table>
-            </div>
-            </div>
-          </div>
+
         </div>
       </div>
-
+</div>
   </div>
   </div>
+  
   </div>
 </template>
 <script>

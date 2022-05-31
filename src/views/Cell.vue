@@ -30,6 +30,21 @@
           </b-checkbox>
         </b-dropdown>
       </b-col>
+      <!-- 
+            <b-col>
+        <b-dropdown text="Système d'exploitation">
+          <b-checkbox
+            :disabled="visibleFields.length == 1 && field.visible"
+            v-for="field in showFields"
+            :key="field.key"
+            v-model="field.visible"
+            block
+          >
+            {{ field.label }}
+          </b-checkbox>
+        </b-dropdown>
+      </b-col>
+      -->
     </b-row>
     <b-col>
       <b-table :items="items" :fields="visibleFields" hover :filter="keyword">
