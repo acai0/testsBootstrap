@@ -1,122 +1,239 @@
 <template>
- <div class="container">
-  <div class="col-md-12">
+  <div class="container">
+   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
         Catalogue des logiciels
+                <input
+        class="form-control"
+        id="myInput"
+        type="text"
+        placeholder="Recherche"
+      />
       </div>
-      <div class="panel-body">
-        <table class="table table-condensed table-striped">
-          <thead>
-            <tr>
-              <th>Intitulé</th>
-              <th>Windows</th>
-              <th>Ubuntu</th>
-              <th>Macos</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            <tr data-toggle="collapse" data-target="#demo1">
-            
-              <td>vlc</td>
-              <td>vlc</td>
-              <td>vlc</td>
-              <td>vlc</td>
-            </tr>
+<div class="container">
+      <div class="accordion" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              VLC
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+                <table class="table table-condensed table-striped">
+              <tr>
+                <th>OS</th>
+                <th>Paquet</th>
+                <th>Version</th>
+                <th>Option</th>
+                <th>Ensure</th>
+              </tr>
 
-            <tr>
-              <td colspan="12" class="hiddenRow">
-                <div class="accordian-body collapse" id="demo1">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr class="info">
-                        <th>OS</th>
-                        <th>Paquet</th>
-                        <th>Version</th>
-                        <th>Option</th>
-                        <td> Ensure</td>
-                      </tr>
-                    </thead>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-windows"
+                    v-b-popover.hover.top="'Windows'"
+                  ></i>
+                </td>
+                <td>vlc</td>
+                <td><i class="bi bi-unlock-fill" v-b-popover.hover.top="'Version maintenue'"/>7.12.3</td>
+                <td><code>[--param --verbs]</code></td>
+                <td><code>present</code></td>
+              </tr>
 
-                    <tbody>
-                      <tr>
-                        <td colspan="12" class="hiddenRow">
-                          <div class="accordian-body collapse" id="demo10">
-                            <table class="table table-striped">
-                              <thead>
-                              </thead>
-                              <tbody>
-                              </tbody>
-                            </table>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-box2-fill"
+                    v-b-popover.hover.top="'Ubuntu'"
+                  ></i>
+                </td>
+                <td>vlc</td>
+                <td><i class="bi bi-arrow-repeat" v-b-popover.hover.top="'Mise à jour automatique'"/>7.12.3</td>
+                <td></td>
+                <td><code>latest</code></td>
+              </tr>
 
-                          </div>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>WINDOWS</td>
-                        <td>vlc</td>
-                        <td>7.12.3 </td>
-                        <td>[--param --verbs ]</td>
-                        <td>latest</td>
-                      </tr>
-
-                      <tr>
-                        <td>UBUNTU</td>
-                        <td>vlc</td>
-                        <td>7.12.3 </td>
-                        <td> </td>
-                        <td>latest</td>
-                      </tr>
-
-                      <tr>
-                        <td>MACOS</td>
-                        <td>vlc</td>
-                        <td>7.12.3 </td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-
-                    </tbody>
+              <tr>
+                <td>
+                  <i class="bi bi-apple" v-b-popover.hover.top="'MacOS'"></i>
+                </td>
+                <td>vlc</td>
+                <td><i class="bi bi-lock-fill" v-b-popover.hover.top="'Version non maintenue'"/>7.12.3</td>
+                <td></td>
+                <td></td>
+              </tr>
                   </table>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Firefox
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <table class="table table-condensed table-striped">
+              <tr>
+                <th>OS</th>
+                <th>Paquet</th>
+                <th>Version</th>
+                <th>Option</th>
+                <th>Ensure</th>
+              </tr>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-windows"
+                    v-b-popover.hover.top="'Windows'"
+                  ></i>
+                </td>
+                <td>Firefox</td>
+                <td><i class="bi bi-unlock-fill" v-b-popover.hover.top="'Version maintenue'"/>100.0.2</td>
+                <td><code>[--param --verbs]</code></td>
+                <td><code>present</code></td>
+              </tr>
 
-                </div>
-              </td>
-            </tr>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-box2-fill"
+                    v-b-popover.hover.top="'Ubuntu'"
+                  ></i>
+                </td>
+                <td>Firefox</td>
+                <td>  <i class="bi bi-arrow-repeat" v-b-popover.hover.top="'Mise à jour automatique'"/>100.0.2</td>
+                <td></td>
+                <td><code>latest</code></td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="bi bi-apple" v-b-popover.hover.top="'MacOS'"></i>
+                </td>
+                <td>Firefox</td>
+                <td><i class="bi bi-lock-fill" v-b-popover.hover.top="'Version non maintenue'"/>100.0.2</td>
+                <td></td>
+                <td></td>
+              </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Chrome
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+            <table class="table table-condensed table-striped">
+              <tr>
+                <th>OS</th>
+                <th>Paquet</th>
+                <th>Version</th>
+                <th>Option</th>
+                <th>Ensure</th>
+              </tr>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-windows"
+                    v-b-popover.hover.top="'Windows'"
+                  ></i>
+                </td>
+                <td>chrome</td>
+                <td><i class="bi bi-unlock-fill" v-b-popover.hover.top="'Version maintenue'"/>102.0.5005.63</td>
+                <td><code>[--param --verbs]</code></td>
+                <td><code>present</code></td>
+              </tr>
 
-            <tr data-toggle="collapse" data-target="#demo2">
-              <td>Firefox</td>
-              <td>firefox</td>
-              <td>firefox</td>
-              <td>firefox</td>
-            </tr>
-            <tr>
-              <td colspan="6" class="hiddenRow">
-                <div id="demo2" class="accordian-body collapse">Demo2</div>
-              </td>
-            </tr>
-            <tr data-toggle="collapse" data-target="#demo3">
-              <td>Chrome</td>
-              <td>Chrome</td>
-              <td>Chrome</td>
-              <td>Chrome</td>
-            </tr>
-            <tr>
-              <td colspan="6" class="hiddenRow">
-                <div id="demo3" class="accordian-body collapse">Demo3</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-box2-fill"
+                    v-b-popover.hover.top="'Ubuntu'"
+                  ></i>
+                </td>
+                <td>chrome</td>
+                <td> <i class="bi bi-arrow-repeat" v-b-popover.hover.top="'Mise à jour automatique'"/>102.0.5005.63</td>
+                <td></td>
+                <td><code>latest</code></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <i class="bi bi-apple" v-b-popover.hover.top="'MacOS'"></i>
+                </td>
+                <td>chrome</td>
+                <td> <i class="bi bi-lock-fill" v-b-popover.hover.top="'Version non maintenue'"/>102.0.5005.61</td>
+                <td></td>
+                <td></td>
+              </tr>
+              </table>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
 
   </div>
-</div>
+  </div>
+  </div>
 </template>
-
 <script>
 
+// Fonction pour filtrer des noms
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
 </script>
+<style>
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+</style>
