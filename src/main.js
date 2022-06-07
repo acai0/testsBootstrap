@@ -17,6 +17,9 @@ Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false;
 
+// Activation du mode de performance
+Vue.config.performance = true;
+
 /* Pour pouvoir utiliser Navigation sur le projet */
 Vue.component('Navigation', ()=>import('@/components/Navigation.vue'));
 

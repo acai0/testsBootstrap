@@ -35,7 +35,6 @@
     <b-table
       :items="items"
       :fields="fields"
-      responsive="sm"
       hover
       :filter="keyword"
     >

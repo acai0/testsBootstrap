@@ -2,7 +2,7 @@
     <div class="header">
         <br> </br>
           <h4>Catalogue d'applications</h4>
-<div class="container">
+<div class="container" id="myTable">
 
       <div class="accordion" id="accordionFlushExample">
         <div class="accordion-item">
@@ -140,7 +140,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="myTable">
+          <h2 class="accordion-header" >
             <button
               class="accordion-button collapsed"
               type="button"
