@@ -2,14 +2,14 @@
   <div class="container">
     <br />
     <h3>Catalogue d'applications</h3>
-
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>Intitulé</th>
           <th>Windows</th>
           <th>Ubuntu</th>
           <th>Macos</th>
+          <th></th>
         </tr>
       </thead>
     </table>
@@ -28,7 +28,7 @@
               v-on:click="afficheTab()"
             >
               <!-- <strong>{{ index }} </strong> VLC -->
-              <table class="table table-borderless">
+              <table class="table table-bordered">
                 <tbody>
                   <tr>
                     <td>VLC</td>
@@ -60,9 +60,7 @@ import { ref, onMounted } from "vue";
 export default {
   data: function () {
     return {
-      tab: ` <h2>
-      Alice
-      </h2>`,
+      tab: "",
     };
   },
   mounted() {
@@ -83,11 +81,11 @@ export default {
                 <td>
                   <i
                     class="bi bi-windows"
-                    v-b-popover.hover.top="'Windows'"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Windows"
                   ></i>
                 </td>
-                <td>chrome</td>
-                <td><i class="bi bi-unlock-fill" v-b-popover.hover.top="'Version maintenue'"/>102.0.5005.63</td>
+                <td>vlc</td>
+                <td><i class="bi bi-unlock-fill"  data-bs-toggle="tooltip" data-bs-placement="top" title="Version maintenue"/>102.0.5005.63</td>
                 <td><code>[--param --verbs]</code></td>
                 <td><code>present</code></td>
               </tr>
@@ -96,21 +94,21 @@ export default {
                 <td>
                   <i
                     class="bi bi-box2-fill"
-                    v-b-popover.hover.top="'Ubuntu'"
+                     data-bs-toggle="tooltip" data-bs-placement="top" title="Ubuntu/Debian"
                   ></i>
                 </td>
-                <td>chrome</td>
-                <td> <i class="bi bi-arrow-repeat" v-b-popover.hover.top="'Mise à jour automatique'"/>102.0.5005.63</td>
+                <td>vlc</td>
+                <td> <i class="bi bi-arrow-repeat"  data-bs-toggle="tooltip" data-bs-placement="top" title="Mise à jour automatique"/>102.0.5005.63</td>
                 <td></td>
                 <td><code>latest</code></td>
               </tr>
 
               <tr>
                 <td>
-                  <i class="bi bi-apple" v-b-popover.hover.top="'MacOS'"></i>
+                  <i class="bi bi-apple"  data-bs-toggle="tooltip" data-bs-placement="top" title="MacOS"></i>
                 </td>
-                <td>chrome</td>
-                <td> <i class="bi bi-lock-fill" v-b-popover.hover.top="'Version non maintenue'"/>102.0.5005.61</td>
+                <td>vlc</td>
+                <td> <i class="bi bi-lock-fill"  data-bs-toggle="tooltip" data-bs-placement="top" title="Version non maintenue"/>102.0.5005.61</td>
                 <td></td>
                 <td></td>
               </tr>
@@ -129,7 +127,11 @@ table,
 thead,
 tbody {
   text-align: center;
-  overflow-y: auto;
-  position: relative;
+  padding: auto;
+}
+.table-bordered {
+  margin: auto;
+  padding: auto;
+  width: 100em/5;
 }
 </style>
