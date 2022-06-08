@@ -59,6 +59,20 @@
         </div>
       </b-col>
 
+
+        <b-col md="10" class="position-absolute bottom end-0">
+          <b-dropdown text="Système d'exploitation">
+            <b-checkbox
+              :disabled="visibleFields.length == 1 && champ.visible"
+              v-for="champ in showFields"
+              :key="champ.key"
+              v-model="champ.visible"
+            >
+              <!-- Affichage du nom des checkbox -->
+              {{ champ.label }}
+            </b-checkbox>
+          </b-dropdown>
+        </b-col>
       </b-navbar-nav> 
       </b-row> 
       </b-container>
@@ -83,7 +97,45 @@ $(document).ready(function () {
     });
   });
 });
-export default{}
+export default{
+  data(){
+    return{
+     /* Contenu tableau*/
+      items: [
+        { package: "vlc", windows: 35, linux: 21, macos: 16 },
+        { package: "firefox", windows: 18, linux: 20, macos: 20 },
+        { package: "chrome", windows: 12, linux: 13, macos: 18 },
+        { package: "adobe", windows: 2, linux: 2, macos: 2 },
+      ],
+
+      /* Champs tableau*/
+      fields: [
+        { key: "package", label: "Packages", visible: true, sortable: true },
+        { key: "windows", label: "Windows", visible: true, sortable: true },
+        { key: "linux", label: "Linux", visible: true, sortable: true },
+        { key: "macos", label: "Mac OS", visible: true, sortable: true },
+      ],
+ computed: {
+      /* Afficher les champs */
+    visibleFields() {
+      return this.fields.filter((field) => field.visible);
+    },
+
+    /* Afficher les checkbox */
+    showFields() {
+      return this.fields.filter(
+        (field) =>
+          field.key.includes("windows") ||
+          field.key.includes("linux") ||
+          field.key.includes("macos")
+      );
+    },
+    }
+  }},
+  
+   
+}
+ 
 </script>
 <style scoped>
 .container {
