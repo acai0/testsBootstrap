@@ -10,10 +10,10 @@
               <table class="table table-borderless" id="example">
                 <thead>
                   <tr>
-                    <th>Intitulé</th>
-                    <th>Windows</th>
-                    <th>Ubuntu</th>
-                    <th>Macos</th>
+                    <th>INTITULÉ</th>
+                    <th>WINDOWS</th>
+                    <th>UBUNTU</th>
+                    <th>MACOS</th>
                   </tr>
                 </thead>
               </table>
