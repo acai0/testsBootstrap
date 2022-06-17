@@ -21,6 +21,7 @@
           </h2>
          
         </div> -->
+    <!-- 800 fait buguer 
       <div v-for="index in 800">
         <div class="accordion" id="accordionFlushExample">
           <div class="accordion-item">
@@ -35,9 +36,10 @@
                 aria-expanded="false"
                 v-on:click="afficheTab()"
                 
-              >
-                <!-- <strong>{{ index }} </strong> VLC -->
-                 <!--<div class="col-md-12 text-center">VLC</div> -->
+              >-->
+    <!-- <strong>{{ index }} </strong> VLC -->
+    <!--<div class="col-md-12 text-center">VLC</div> -->
+    <!-- 800 fait buguer
                  VLC
                   
               </button>
@@ -60,23 +62,23 @@
     </div>
   </div>
 </template>
-<script>
-import { ref, onMounted } from "vue";
-export default {
-  data: function () {
-    return {
-      tab: "",
-     
-    };
-  },
-  mounted() {
-    // console.log(this.$ref.b1b);
-    // this.$ref.b1b.id
-        
-  },
-  methods: {
-    afficheTab() {
-      var tableau = `  <table class="table table-condensed">
+
+    <script>
+      import { ref, onMounted } from "vue";
+      export default {
+        data: function () {
+          return {
+            tab: "",
+          };
+        },
+        mounted() {
+          // console.log(this.$ref.b1b);
+          // this.$ref.b1b.id
+          
+        },
+        methods: {
+          afficheTab() {
+            var tableau = `  <table class="table table-condensed">
               <tr>
                 <th>OS</th>
                 <th>Paquet</th>
@@ -120,36 +122,39 @@ export default {
                 <td><code>102.0.5005.61</code></td>
               </tr>
               </table>`;
-      this.tab = tableau;
-      //console.log(event);
-    },
+            this.tab = tableau;
+            //console.log(event);
+          },
+        },
+      };
+      // Pouvoir afficher un tableau seulement quand on clique, le + @click.
+      // Avec this.$ref, modifier chaque bouton,  méthode qui va dessiner le tableau
+      // CHERCHER valeur dans le dom pour modifier
+    </script>
+    <style scoped>
+      table,
+      thead,
+      tbody {
+        text-align: center;
+        padding: auto;
+        margin: auto;
+        width: 1296px;
+      }
+      .table-bordered {
+        padding: auto;
+        width: 100em/5;
+      }
 
-  }
-  };
-// Pouvoir afficher un tableau seulement quand on clique, le + @click.
-// Avec this.$ref, modifier chaque bouton,  méthode qui va dessiner le tableau
-// CHERCHER valeur dans le dom pour modifier
-</script>
-<style scoped>
-table,
-thead,
-tbody {
-  text-align: center;
-  padding: auto;
-  margin: auto;
-  width: 1296px;
-}
-.table-bordered {
-  padding: auto;
-  width: 100em/5;
-}
-
-th {
-  width: 328.25px;
-}
-/* Custom style */
-#no::after {
-  background-image: none;
-}
-
-</style>
+      th {
+        width: 328.25px;
+      }
+      /* Custom style */
+      #no::after {
+        background-image: none;
+      }
+    </style>
+  </div>
+</template>
+-->
+  </div>
+</template>

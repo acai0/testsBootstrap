@@ -67,6 +67,7 @@
                   >composantTable</b-dropdown-item
                 >
                 <b-dropdown-item href="/scroll">Scroll</b-dropdown-item>
+                <b-dropdown-item href="/testScroll">testScroll</b-dropdown-item>
               </b-nav-item-dropdown>
             </li>
           </ul>
