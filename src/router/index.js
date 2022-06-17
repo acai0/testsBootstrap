@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/bulma",
     name: "bulma",
     component: Bulma,
   },
@@ -30,8 +30,7 @@ const routes = [
     path: "/tag",
     name: "tag",
 
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Tag.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "../views/Tag.vue"),
   },
   {
     path: "/cell",
@@ -67,6 +66,32 @@ const routes = [
 
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Collapse.vue"),
+  },
+  {
+    path: "/",
+    name: "json",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Json.vue"),
+  },
+  {
+    path: "/remotejson",
+    name: "remotejson",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/remoteJson.vue"),
+  },
+  {
+    path: "/composant",
+    name: "composant",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/composantTable.vue"),
+  },
+  {
+    path: "/scroll",
+    name: "scroll",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Scroll.vue"),
   },
 ];
 

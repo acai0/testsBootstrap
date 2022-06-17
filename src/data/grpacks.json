@@ -1,0 +1,52 @@
+[
+  {
+    "id": "vlc",
+    "modified": 1648037435,
+    "packages": [
+      {
+        "os": "ubuntu",
+        "package_name": "vlc",
+        "ensure": "latest",
+        "requested_modules": ["repository::apt_su", "profiles::sudo"]
+      },
+      {
+        "os": "windows",
+        "package_name": "vlc",
+        "ensure": "latest"
+      }
+    ]
+  },
+  {
+    "id": "python3_8_7",
+    "modified": 1648037435,
+    "packages": [
+      {
+        "os": "ubuntu",
+        "package_name": "python3",
+        "ensure": "3.8.7"
+      },
+      {
+        "os": "windows",
+        "package_name": "python",
+        "ensure": "3.8.7"
+      }
+    ]
+  },
+  {
+    "id": "chromium",
+    "modified": 1678037435,
+    "packages": [
+      {
+        "os": "ubuntu",
+        "package_name": "chromium",
+        "ensure": "present",
+        "upstream_latest_version": "101.0.59.22"
+      },
+      {
+        "os": "windows",
+        "package_name": "chromium",
+        "ensure": "3.8.7"
+      }
+    ]
+  }
+]

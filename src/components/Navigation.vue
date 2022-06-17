@@ -22,15 +22,15 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <b-dropdown variant="light" text="Système d'exploitation">
-                <b-checkbox
-                  :disabled="visibleFields.length == 1 && champ.visible"
-                  v-for="champ in showFields"
-                  :key="champ.key"
-                  v-model="champ.visible"
-                >
+                <!--<div v-for="grpack in grpacks" :key="grpack.id"> -->
+                <!-- <div v-for="(grpack, index) in grpack.packages" :key="index"> -->
+                <b-checkbox id="windows">
                   <!-- Affichage du nom des checkbox -->
-                  {{ champ.label }}
+                  <!-- {{ grpack.os }} -->
+                  Windows
                 </b-checkbox>
+                <b-checkbox id="ubuntu"> Ubuntu/ Debian </b-checkbox>
+                <b-checkbox id="macos"> MacOs</b-checkbox>
               </b-dropdown>
             </li>
             <li class="nav-item">
@@ -50,17 +50,23 @@
             </div>
             <li class="nav-item">
               <b-nav-item-dropdown text="Page" center>
-                <b-dropdown-item href="/">Bulma</b-dropdown-item>
+                <b-dropdown-item href="/bulma">Bulma</b-dropdown-item>
                 <b-dropdown-item href="bootstrap">Bootstrap</b-dropdown-item>
                 <b-dropdown-item href="test">Test</b-dropdown-item>
                 <b-dropdown-item href="tag">Tag</b-dropdown-item>
                 <b-dropdown-item href="cell">Cell</b-dropdown-item>
                 <b-dropdown-item href="Table">Table</b-dropdown-item>
                 <b-dropdown-item href="Accordeon">Accordeon</b-dropdown-item>
+                <b-dropdown-item href="/">Json</b-dropdown-item>
                 <b-dropdown-item href="Accordiontest"
                   >AccordeonTest</b-dropdown-item
                 >
+                <b-dropdown-item href="/remoteJson">RemoteJson</b-dropdown-item>
                 <b-dropdown-item href="Collapse">Collapse</b-dropdown-item>
+                <b-dropdown-item href="composant"
+                  >composantTable</b-dropdown-item
+                >
+                <b-dropdown-item href="/scroll">Scroll</b-dropdown-item>
               </b-nav-item-dropdown>
             </li>
           </ul>
@@ -79,42 +85,57 @@ $(document).ready(function () {
     });
   });
 });
+
+// Fonction pour filtrer les tableaux des paquets
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
+
+// Filtrage par OS
+$(document).ready(function () {
+  $(".checkbox").click(function () {
+    if ($("#windows").is(":checked")) {
+      $("#additional_foreign").show();
+    }
+    if ($("#ubuntu").is(":checked")) {
+      $("#additional_foreign").show();
+    }
+    if ($("#macos").is(":checked")) {
+      $("#additional_foreign").show();
+    } else {
+      $("#additional_foreign").hide();
+    }
+  });
+
+  $("#additional_foreign").click(function () {
+    alert("This click function works");
+  });
+});
+
 export default {
   data() {
     return {
-      /* Contenu tableau*/
-      items: [
-        { package: "vlc", windows: 35, linux: 21, macos: 16 },
-        { package: "firefox", windows: 18, linux: 20, macos: 20 },
-        { package: "chrome", windows: 12, linux: 13, macos: 18 },
-        { package: "adobe", windows: 2, linux: 2, macos: 2 },
-      ],
-
-      /* Champs tableau*/
-      fields: [
-        { key: "package", label: "Packages", visible: true, sortable: true },
-        { key: "windows", label: "Windows", visible: true, sortable: true },
-        { key: "linux", label: "Linux", visible: true, sortable: true },
-        { key: "macos", label: "Mac OS", visible: true, sortable: true },
-      ],
-      computed: {
-        /* Afficher les champs */
-        visibleFields() {
-          return this.fields.filter((field) => field.visible);
-        },
-
-        /* Afficher les checkbox */
-        showFields() {
-          return this.fields.filter(
-            (field) =>
-              field.key.includes("windows") ||
-              field.key.includes("linux") ||
-              field.key.includes("macos")
-          );
-        },
-      },
+      grpacks: null,
     };
   },
+  mounted() {
+    axios
+      .get("http://localhost:8080/grpacks")
+      .then((response) => {
+        //console.log(response)
+        this.grpacks = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+        this.errored = true;
+      });
+  },
+  methods: {},
 };
 </script>
 <style scoped>
@@ -137,5 +158,20 @@ export default {
 }
 .nav-item-dropdown {
   color: #ffff;
+}
+.dropdown {
+  padding: 4px;
+  height: 3em;
+}
+input {
+  height: 2.7em;
+}
+i {
+  padding: 4px;
+  height: 2em;
+}
+.checkbox {
+  align-items: center;
+  display: flex;
 }
 </style>

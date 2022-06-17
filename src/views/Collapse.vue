@@ -2,7 +2,7 @@
   <div class="container">
     <br />
     <h3>Catalogue d'applications</h3>
-    <div class="container">
+    <!--
       <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="myTable">
@@ -19,9 +19,8 @@
               </table>
             </button>
           </h2>
-        </div>
-      </div>
-
+         
+        </div> -->
       <div v-for="index in 800">
         <div class="accordion" id="accordionFlushExample">
           <div class="accordion-item">
@@ -35,20 +34,15 @@
                 v-bind:aria-controls="index"
                 aria-expanded="false"
                 v-on:click="afficheTab()"
+                
               >
                 <!-- <strong>{{ index }} </strong> VLC -->
-                <table class="table table-borderless">
-                  <tbody>
-                    <tr>
-                      <td>VLC</td>
-                      <td>VLC</td>
-                      <td>VLC</td>
-                      <td>VLC</td>
-                    </tr>
-                  </tbody>
-                </table>
+                 <!--<div class="col-md-12 text-center">VLC</div> -->
+                 VLC
+                  
               </button>
             </h2>
+              <ul class="list-group" id="infinite-list">
             <div
               v-bind:id="'a' + index"
               class="accordion-collapse collapse"
@@ -59,7 +53,8 @@
                 <div v-html="tab"></div>
               </div>
             </div>
-          </div>
+            </ul>
+            </div>
         </div>
       </div>
     </div>
@@ -71,11 +66,13 @@ export default {
   data: function () {
     return {
       tab: "",
+     
     };
   },
   mounted() {
     // console.log(this.$ref.b1b);
     // this.$ref.b1b.id
+        
   },
   methods: {
     afficheTab() {
@@ -126,8 +123,9 @@ export default {
       this.tab = tableau;
       //console.log(event);
     },
-  },
-};
+
+  }
+  };
 // Pouvoir afficher un tableau seulement quand on clique, le + @click.
 // Avec this.$ref, modifier chaque bouton,  méthode qui va dessiner le tableau
 // CHERCHER valeur dans le dom pour modifier
@@ -153,4 +151,5 @@ th {
 #no::after {
   background-image: none;
 }
+
 </style>
