@@ -1,130 +1,90 @@
 <template>
   <div>
-    <div class="heading">
-      <h1>Infinite Scroll</h1>
-      <h4>A simple infinite scroll example using Vue.js</h4>
-    </div>
-
-    <div class="container" id="app">
-      <div class="list-group-wrapper">
-        <transition name="fade">
-          <div class="loading" v-show="loading">
-            <span class="fa fa-spinner fa-spin"></span> Loading
-          </div>
-        </transition>
-        <ul class="list-group" id="infinite-list">
-          <li class="list-group-item" v-for="item in items" v-text="item"></li>
-        </ul>
-      </div>
-    </div>
+    <header>
+      <h1>Test Scrolling</h1>
+    </header>
+    <main>
+      <Post v-for="(grpack, i) in grpack_list" :key="i" :grpack="grpack" />
+    </main>
   </div>
 </template>
+
 <script>
+import Post from "../components/Post.vue";
 export default {
+  name: "App",
   data() {
     return {
-      loading: false,
-      nextItem: 1,
-      items: [],
+      grpack_list: [],
     };
   },
-  mounted() {
-    // Detect when scrolled to bottom.
-    const listElm = document.querySelector("#infinite-list");
-    listElm.addEventListener("scroll", (e) => {
-      if (listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
-        this.loadMore();
-      }
-    });
-
-    // Initially load some items.
-    this.loadMore();
+  components: {
+    Post,
   },
   methods: {
-    loadMore() {
-      /** This is only for this demo, you could
-       * replace the following with code to hit
-       * an endpoint to pull in more data. **/
-      this.loading = true;
-      setTimeout((e) => {
-        for (var i = 0; i < 20; i++) {
-          this.items.push("Item " + this.nextItem++);
-        }
-        this.loading = false;
-      }, 200);
-      /**************************************/
+    getGrpack() {
+      const grpack_titles = [
+        "VLC",
+        "Chrome",
+        "Adobe",
+        "Firefox",
+        "Paint",
+        "Spyder",
+        "Atom",
+        "Ccleaner",
+        "Powershell",
+        "WinSCP",
+        "FileZilla",
+      ];
+      const grpack = [];
+      for (let i = 0; i < 10; i++) {
+        grpack.push({
+          title:
+            grpack_titles[Math.floor(Math.random() * grpack_titles.length)],
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        });
+      }
+      return grpack;
     },
+    handleScroll() {
+      if (
+        window.scrollY + window.innerHeight >=
+        document.body.scrollHeight - 50
+      ) {
+        const new_grpack = this.getGrpack();
+        this.grpack_list = [...this.grpack_list, ...new_grpack];
+      }
+    },
+  },
+  mounted() {
+    this.grpack_list = this.getGrpack();
+    window.addEventListener("scroll", this.handleScroll);
   },
 };
 </script>
+
 <style>
-$purple: #5c4084;
-
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
-  background-color: $purple;
-  padding: 50px;
-}
-.container {
-  padding: 40px 80px 15px 80px;
-  background-color: #fff;
-  border-radius: 8px;
-  max-width: 800px;
-}
-.heading {
-  text-align: center;
-  h1 {
-    background: -webkit-linear-gradient(#fff, #999);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    text-align: center;
-    margin: 0 0 5px 0;
-    font-weight: 900;
-    font-size: 4rem;
-    color: #fff;
-  }
-  h4 {
-    color: lighten(#5c3d86, 30%);
-    text-align: center;
-    margin: 0 0 35px 0;
-    font-weight: 400;
-    font-size: 24px;
-  }
-}
-
-.list-group-wrapper {
-  position: relative;
-}
-.list-group {
-  overflow: auto;
-  height: 50vh;
-  border: 2px solid #dce4ec;
-  border-radius: 5px;
-}
-.list-group-item {
-  margin-top: 1px;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-bottom: 2px solid #dce4ec;
-}
-.loading {
-  text-align: center;
-  position: absolute;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #fff;
-  z-index: 9;
-  background: $purple;
-  padding: 8px 18px;
-  border-radius: 5px;
-  left: calc(50% - 45px);
-  top: calc(50% - 18px);
+  min-height: 100vh;
 }
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+header h1 {
+  text-align: center;
 }
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+header {
+  margin-bottom: 2rem;
+}
+main {
+  padding: 0 2rem;
+  max-width: 640px;
+  margin: 0 auto;
 }
 </style>

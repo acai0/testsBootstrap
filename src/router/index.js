@@ -99,6 +99,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/testScroll.vue"),
   },
+  {
+    path: "/scroll2",
+    name: "scroll2",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Scroll2.vue"),
+  },
 ];
 
 const router = new VueRouter({

@@ -1,94 +1,115 @@
 <template>
-  <div>
-    <header>
-      <h1>My grpacks</h1>
-    </header>
-    <main>
-      <Post v-for="(grpack, i) in grpack_list" :key="i" :grpack="grpack" />
-    </main>
+  <div class="container">
+    <br />
+    <h3>Catalogue d'applications</h3>
+
+    <div v-for="grpack in grpacks" :key="grpack.id">
+      <div class="accordion" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="myTable">
+            <button
+              :id="'b' + grpack.id"
+              :ref="'b' + grpack.id"
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              v-bind:data-bs-target="'#a' + grpack.id"
+              v-bind:aria-controls="grpack.id"
+              aria-expanded="false"
+              @click="test"
+            >
+              <strong>{{ grpack.id }} </strong>
+            </button>
+          </h2>
+
+          <div
+            v-bind:id="'a' + grpack.id"
+            class="accordion-collapse collapse"
+            :aria-labelledby="'a' + grpack.id"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <Table v-for="(grpack, i) in grpacks" :key="i" :grpack="grpack" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
-import Post from "../components/Post.vue";
+import Table from "../components/grpackTable.vue";
+import axios from "axios";
+import ref from "vue";
+console.log(Table);
 export default {
-  name: "App",
+  components: {
+    Table,
+  },
   data() {
     return {
+      grpacks: null,
+      tab: "",
+      aclick: false,
+      ok: false,
       grpack_list: [],
     };
   },
-  components: {
-    Post,
+  mounted() {
+    //console.log(this.$refs.test.webkitEntries)
+    axios
+      .get("http://localhost:8080/grpacks")
+      .then((response) => {
+        //console.log(response)
+        this.grpacks = response.data;
+      })
+      .catch((error) => {
+        this.errored = true;
+      });
+
+    this.grpack_list = this.getGrpack();
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
+    test() {
+      this.ok = !this.ok;
+    },
     getGrpack() {
-      const grpack_titles = [
-        "Naruto",
-        "Demon Slayer",
-        "Dragon Ball",
-        "My Hero Academia",
-        "Sword Art Online",
-        "Tokyo Ghoul",
-        "Darling in the Franxx",
-        "Code Geass",
-        "One Piece",
-        "Fairy Tail",
-        "Bleach",
-        "Attack on Titan",
-        "Hunter x Hunter",
-      ];
-      const grpack = [];
-      for (let i = 0; i < 10; i++) {
-        grpack.push({
-          title:
-            grpack_titles[Math.floor(Math.random() * grpack_titles.length)],
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        });
-      }
-      return grpack;
+      axios.get("http://localhost:8080/grpacks").then((response) => {
+        //console.log(response)
+        this.grpacks = response.data;
+        const grpack_titles = this.grpacks;
+        const grpack = [];
+        for (let i = 0; i < 21; i++) {
+          grpacks.push({
+            title:
+              grpack_titles[Math.floor(Math.random() * grpack_titles.length)],
+          });
+        }
+        return grpacks;
+      });
     },
     handleScroll() {
       if (
         window.scrollY + window.innerHeight >=
-        document.body.scrollHeight - 50
+        document.body.scrollHeight - 21
       ) {
         const new_grpack = this.getGrpack();
         this.grpack_list = [...this.grpack_list, ...new_grpack];
       }
     },
   },
-  mounted() {
-    this.grpack_list = this.getGrpack();
-    window.addEventListener("scroll", this.handleScroll);
-  },
 };
 </script>
-
-<style>
-* {
-  margin: 0;
-  box-sizing: border-box;
+<style scoped>
+code {
+  color: grey;
+}
+th {
+  width: 25em;
 }
 body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #fff;
-  /* background-color: #2c3e50; */
   min-height: 100vh;
-  padding-top: 3rem;
-}
-header h1 {
-  text-align: center;
-}
-header {
-  margin-bottom: 2rem;
-}
-main {
-  padding: 0 2rem;
-  max-width: 640px;
-  margin: 0 auto;
 }
 </style>
+<!-- Prendre tableau et mettre dans un composant, tester raffraichissement au scrolling, recherche, staloverflow, medium, dev.to: les bonnes pratiques (liste, stockage de données) -->
