@@ -79,6 +79,7 @@
 </template>
 <script>
 // Fonction pour filtrer des noms
+/*
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
     var value = $(this).val().toLowerCase();
@@ -86,14 +87,35 @@ $(document).ready(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
-});
+}); */
 
 // Fonction pour filtrer les tableaux des paquets
+/*
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
     var value = $(this).val().toLowerCase();
     $("#myTable tr").filter(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});*/
+
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var unicode = event.charCode ? event.charCode : event.keyCode;
+    if (unicode == 27) {
+      $(this).val("");
+    }
+    var searchKey = $(this).val().toLowerCase();
+    $(".accordion-button").each(function () {
+      var cellText = $(this).text().toLowerCase();
+
+      if (cellText.indexOf(searchKey) >= 0) {
+        $(this).parent().parent().show();
+      } else {
+        $(this).parent().parent().hide();
+        $(".accordion-body.in").collapse("hide");
+      }
     });
   });
 });

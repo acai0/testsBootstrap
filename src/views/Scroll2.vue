@@ -1,15 +1,13 @@
 <template>
   <div class="container">
-    <div class="list-group-wrapper">
-      <transition name="fade">
-        <div class="loading" v-show="loading">
-          <span class="fa fa-spinner fa-spin"></span> Loading
-        </div>
-      </transition>
-      <ul class="list-group" id="infinite-list">
-        <li class="list-group-item" v-for="item in items" v-text="item"></li>
-      </ul>
-    </div>
+    <transition name="fade">
+      <div class="loading" v-show="loading">
+        <span class="fa fa-spinner fa-spin"></span> Loading
+      </div>
+    </transition>
+    <ul class="list-group" id="infinite-list">
+      <li class="list-group-item" v-for="item in items" v-text="item"></li>
+    </ul>
   </div>
 </template>
 <script>
