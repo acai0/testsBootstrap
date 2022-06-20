@@ -100,12 +100,9 @@ $(document).ready(function () {
   });
 });*/
 
+// Filtrer button
 $(document).ready(function () {
   $("#myInput").on("keyup", function () {
-    var unicode = event.charCode ? event.charCode : event.keyCode;
-    if (unicode == 27) {
-      $(this).val("");
-    }
     var searchKey = $(this).val().toLowerCase();
     $(".accordion-button").each(function () {
       var cellText = $(this).text().toLowerCase();
@@ -119,7 +116,22 @@ $(document).ready(function () {
     });
   });
 });
+// Filtrage accordion body
+$(document).ready(function () {
+  $("#myInput").on("keyup", function () {
+    var searchKey = $(this).val().toLowerCase();
+    $(".accordion-body").each(function () {
+      var cellText = $(this).text().toLowerCase();
 
+      if (cellText.indexOf(searchKey) >= 0) {
+        $(this).parent().parent().show();
+      } else {
+        $(this).parent().parent().hide();
+        $(".accordion-body.in").collapse("hide");
+      }
+    });
+  });
+});
 // Filtrage par OS
 $(document).ready(function () {
   $(".checkbox").click(function () {
