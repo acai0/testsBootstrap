@@ -1,10 +1,9 @@
 <template>
   <div>
-    <header>
-      <h1>Test Scrolling</h1>
-    </header>
+    <header></header>
     <main>
       <Post v-for="(grpack, i) in grpack_list" :key="i" :grpack="grpack" />
+      <div v-html="grpack_list.description" />
     </main>
   </div>
 </template>
@@ -41,8 +40,50 @@ export default {
         grpack.push({
           title:
             grpack_titles[Math.floor(Math.random() * grpack_titles.length)],
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          description: `<table class="table table-condensed">
+              <tr>
+                <th>OS</th>
+                <th>Paquet</th>
+                <th>Version</th>
+                <th>Option</th>
+                <th>Ensure</th>
+              </tr>
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-windows"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Windows"
+                  ></i>
+                </td>
+                <td>vlc</td>
+                <td><i class="bi bi-unlock-fill"  data-bs-toggle="tooltip" data-bs-placement="top" title="Version maintenue"/>102.0.5005.63</td>
+                <td><code>[--param --verbs]</code></td>
+                <td><code>present</code></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <i
+                    class="bi bi-box2-fill"
+                     data-bs-toggle="tooltip" data-bs-placement="top" title="Ubuntu/Debian"
+                  ></i>
+                </td>
+                <td>vlc</td>
+                <td> <i class="bi bi-arrow-repeat"  data-bs-toggle="tooltip" data-bs-placement="top" title="Mise à jour automatique"/>102.0.5005.63</td>
+                <td></td>
+                <td><code>latest</code></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <i class="bi bi-apple"  data-bs-toggle="tooltip" data-bs-placement="top" title="MacOS"></i>
+                </td>
+                <td>vlc</td>
+                <td> <i class="bi bi-lock-fill"  data-bs-toggle="tooltip" data-bs-placement="top" title="Version non maintenue"/>102.0.5005.61</td>
+                <td></td>
+                <td><code>102.0.5005.61</code></td>
+              </tr>
+              </table>`,
         });
       }
       return grpack;
@@ -86,5 +127,8 @@ main {
   padding: 0 2rem;
   max-width: 640px;
   margin: 0 auto;
+}
+code {
+  color: grey;
 }
 </style>

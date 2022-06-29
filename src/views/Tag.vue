@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
       <b-form-tags id="tags-with-dropdown" v-model="value" no-outer-focus class="mb-2">
         <template v-slot="{ tags, disabled, addTag, removeTag }">
           <ul v-if="tags.length > 0" class="list-inline d-inline-block mb-2">

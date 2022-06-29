@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
   
   <!-- Nom et barre de recherche -->
         <label>Filtrer par nom:</label>

@@ -105,6 +105,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Scroll2.vue"),
   },
+  {
+    path: "/data",
+    name: "data",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Datatable.vue"),
+  },
 ];
 
 const router = new VueRouter({

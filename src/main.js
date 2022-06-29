@@ -6,12 +6,15 @@ import axios from "axios";
 import infiniteScroll from "vue-infinite-scroll";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+//import DataTables from "datatables.net-dt";
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(infiniteScroll);
+
+//Vue.use(DataTables);
 
 // Utilisation d'axios
 Vue.prototype.$api = axios.create({

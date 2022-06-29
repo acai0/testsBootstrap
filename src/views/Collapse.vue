@@ -20,9 +20,9 @@
             </button>
           </h2>
          
-        </div> -->
-    <!-- 800 fait buguer 
-      <div v-for="index in 800">
+        </div> 
+-->
+      <div v-for="index in 10">
         <div class="accordion" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="myTable">
@@ -36,10 +36,10 @@
                 aria-expanded="false"
                 v-on:click="afficheTab()"
                 
-              >-->
+              >
     <!-- <strong>{{ index }} </strong> VLC -->
     <!--<div class="col-md-12 text-center">VLC</div> -->
-    <!-- 800 fait buguer
+
                  VLC
                   
               </button>
@@ -152,9 +152,10 @@
       #no::after {
         background-image: none;
       }
+      
+
     </style>
   </div>
 </template>
--->
   </div>
 </template>

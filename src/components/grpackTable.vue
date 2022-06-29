@@ -1,5 +1,7 @@
 <template>
-
+<div>
+    <td v-for="grpack in grpacks" :key="grpack.id">
+    </td>
     <table class="table table-condensed" id="myTable">
       <thead>
         <tr>
@@ -35,6 +37,7 @@
       </tbody>
     </table>
   </div>
+  </div>
 </template>
 
 <script>
@@ -44,6 +47,7 @@ export default {
   data() {
     return {
       grpacks: null,
+
     };
   },
   mounted() {
@@ -53,7 +57,7 @@ export default {
       .then((response) => {
         //console.log(response)
         this.grpacks = response.data;
-
+      console.log(this.grpacks)
         /*
         var result = this.grpacks.filter((x) => x == "ubuntu");
         console.log(result);

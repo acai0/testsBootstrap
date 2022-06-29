@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="container">
     <article class="panel is-info">
       <div class="panel-block">
         <p class="control has-icons-left">

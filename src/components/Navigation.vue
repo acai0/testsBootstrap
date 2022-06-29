@@ -21,34 +21,38 @@
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <b-dropdown variant="light" text="Système d'exploitation">
+              <b-dropdown variant="light" text="Gestionnaire de paquet">
                 <!--<div v-for="grpack in grpacks" :key="grpack.id"> -->
                 <!-- <div v-for="(grpack, index) in grpack.packages" :key="index"> -->
                 <b-checkbox id="windows">
                   <!-- Affichage du nom des checkbox -->
                   <!-- {{ grpack.os }} -->
-                  Windows
+                  Chocolatey
                 </b-checkbox>
-                <b-checkbox id="ubuntu"> Ubuntu/ Debian </b-checkbox>
-                <b-checkbox id="macos"> MacOs</b-checkbox>
+                <b-checkbox rel="ubuntu"> Ubuntu/ Debian </b-checkbox>
+                <b-checkbox rel="macos"> Homebrew</b-checkbox>
               </b-dropdown>
             </li>
-            <li class="nav-item">
-              <input
-                id="myInput"
-                type="text"
-                class="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                placeholder="Filtrer par tag, nom de paquet, OS, ..."
-              />
+            <li class="item">
+              <form class="form-inline">
+                <div class="input-group">
+                  <input
+                    id="filtre"
+                    type="text"
+                    class="form-control"
+                    placeholder="Filtrer par tag, nom de paquet, OS, ..."
+                    aria-label="filtre"
+                    aria-describedby="basic-addon1"
+                  />
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                      <i class="bi bi-search"></i
+                    ></span>
+                  </div>
+                </div>
+              </form>
             </li>
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">
-                <i class="bi bi-search"></i>
-              </span>
-            </div>
-            <li class="nav-item">
+            <li class="item">
               <b-nav-item-dropdown text="Page" center>
                 <b-dropdown-item href="/bulma">Bulma</b-dropdown-item>
                 <b-dropdown-item href="bootstrap">Bootstrap</b-dropdown-item>
@@ -69,6 +73,7 @@
                 <b-dropdown-item href="/scroll">Scroll</b-dropdown-item>
                 <b-dropdown-item href="/testScroll">testScroll</b-dropdown-item>
                 <b-dropdown-item href="/scroll2">Scroll2</b-dropdown-item>
+                <b-dropdown-item href="/data">DataTable</b-dropdown-item>
               </b-nav-item-dropdown>
             </li>
           </ul>
@@ -118,7 +123,7 @@ $(document).ready(function () {
 });
 // Filtrage accordion body
 $(document).ready(function () {
-  $("#myInput").on("keyup", function () {
+  $("#filtre").on("keyup", function () {
     var searchKey = $(this).val().toLowerCase();
     $(".accordion-body").each(function () {
       var cellText = $(this).text().toLowerCase();
@@ -133,6 +138,7 @@ $(document).ready(function () {
   });
 });
 // Filtrage par OS
+/*
 $(document).ready(function () {
   $(".checkbox").click(function () {
     if ($("#windows").is(":checked")) {
@@ -151,6 +157,20 @@ $(document).ready(function () {
   $("#additional_foreign").click(function () {
     alert("This click function works");
   });
+});*/
+$(document).ready(function () {
+  $("td #os").hide();
+
+  $(".dropdown")
+    .find(".checkbox")
+    .click(function () {
+      $("td #os").hide();
+      $(".dropdown")
+        .find(".checkbox:checked")
+        .each(function () {
+          $("td #os" + $(this).attr("rel")).show();
+        });
+    });
 });
 
 export default {
@@ -195,19 +215,12 @@ export default {
 .nav-item-dropdown {
   color: #ffff;
 }
-.dropdown {
-  padding: 4px;
-  height: 3em;
-}
-input {
-  height: 2.7em;
-}
-i {
-  padding: 4px;
-  height: 2em;
-}
+
 .checkbox {
   align-items: center;
   display: flex;
+}
+.item {
+  padding-left: 0.5em;
 }
 </style>

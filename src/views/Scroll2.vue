@@ -1,13 +1,14 @@
 <template>
   <div class="container">
-    <transition name="fade">
-      <div class="loading" v-show="loading">
-        <span class="fa fa-spinner fa-spin"></span> Loading
-      </div>
-    </transition>
-    <ul class="list-group" id="infinite-list">
-      <li class="list-group-item" v-for="item in items" v-text="item"></li>
-    </ul>
+    <div class="loading" v-show="loading">
+      <span class="fa fa-spinner fa-spin"></span> Loading
+    </div>
+    <b-list-group id="infinite-list">
+      <b-list-group-item
+        v-for="item in items"
+        v-text="item"
+      ></b-list-group-item>
+    </b-list-group>
   </div>
 </template>
 <script>
@@ -39,11 +40,10 @@ export default {
       this.loading = true;
       setTimeout((e) => {
         for (var i = 0; i < 20; i++) {
-          this.items.push("VLC " + this.nextItem++);
+          this.items.push("VLC");
         }
         this.loading = false;
       }, 200);
-      /**************************************/
     },
   },
 };
@@ -52,19 +52,13 @@ export default {
 .container {
   padding: 50px 0px 0px 0px;
 }
-.heading {
-  text-align: center;
-  h1 {
-    background: -webkit-linear-gradient(#fff, #999);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    text-align: center;
-    font-size: 4rem;
-    color: #fff;
-  }
-  h4 {
-    text-align: center;
-  }
+
+h1 {
+  background: -webkit-linear-gradient(#fff, #999);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 4rem;
+  color: #fff;
 }
 
 .list-group-wrapper {
