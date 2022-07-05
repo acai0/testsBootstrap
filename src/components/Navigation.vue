@@ -74,6 +74,12 @@
                 <b-dropdown-item href="/testScroll">testScroll</b-dropdown-item>
                 <b-dropdown-item href="/scroll2">Scroll2</b-dropdown-item>
                 <b-dropdown-item href="/data">DataTable</b-dropdown-item>
+                <b-dropdown-item href="/datac"
+                  >DataTable Collapse</b-dropdown-item
+                >
+                <b-dropdown-item href="/testdata"
+                  >Test datatable</b-dropdown-item
+                >
               </b-nav-item-dropdown>
             </li>
           </ul>

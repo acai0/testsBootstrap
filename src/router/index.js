@@ -111,6 +111,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Datatable.vue"),
   },
+  {
+    path: "/datac",
+    name: "datac",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Datatablec.vue"),
+  },
+  {
+    path: "/testdata",
+    name: "testdata",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Testdata.vue"),
+  },
 ];
 
 const router = new VueRouter({

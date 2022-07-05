@@ -1,22 +1,17 @@
 <template>
   <div>
-    <h2>Implement jQuery DataTable in Vue Js</h2>
-    <table class="table" id="datatable">
+    <h2>Datatable</h2>
+    <table class="condense table" id="datatable">
       <thead>
         <tr>
           <th>OS</th>
           <th>Paquet</th>
-          <th>Version</th>
-          <th>Option</th>
-          <th>Ensure</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in products" :key="item.id">
+        <tr v-for="item in grpacks" :key="item.id">
           <td>{{ item.id }}</td>
           <td>{{ item.modified }}</td>
-          <td>ok</td>
-          <td>test</td>
         </tr>
       </tbody>
     </table>
@@ -32,13 +27,13 @@ import $ from "jquery";
 export default {
   mounted() {
     axios.get("http://localhost:8080/grpacks").then((response) => {
-      this.products = response.data;
+      this.grpacks = response.data;
       $("#datatable").DataTable();
     });
   },
   data: function () {
     return {
-      products: [],
+      grpacks: null,
     };
   },
 };
