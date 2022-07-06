@@ -1,59 +1,80 @@
 <template>
   <div class="container">
-    <table class="table table-hover" id="myTable">
+    <br />
+    <h3>Catalogue des logiciels</h3>
+    <table id="example" class="display" style="width: 100%">
       <thead>
         <tr>
-          <th>Room Name</th>
-          <th>Building</th>
-          <th>Actions</th>
+          <th>Grpack</th>
+          <th>Modified</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="room in roomsData" :key="room.id">
-          <td>{{ room.id }}</td>
-          <td>{{ room.bldg }}</td>
-          <td>
-            <a
-              href="#"
-              data-toggle="modal"
-              data-target="#exampleModal"
-              @click="editModal(room)"
-            >
-              <i class="fa fa-edit"></i>
-            </a>
-            <a href="#" @click="deleteRoom(room.id)">
-              <i class="fa fa-trash text-red"></i>
-            </a>
-          </td>
+        <tr v-for="grpack in grpacks" :key="grpack.id">
+          <td>{{ grpack.id }}</td>
+          <td>{{ grpack.modified }}</td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <th>Grpack</th>
+          <th>Modified</th>
+        </tr>
+      </tfoot>
     </table>
   </div>
 </template>
 <script>
+$(document).ready(function () {
+  $("#accordionExample").on("shown.bs.collapse", function () {
+    $.each($.fn.dataTable.tables(true), function () {
+      $(this).DataTable().columns.adjust().draw();
+    });
+  });
+  $("#example").DataTable({
+    language: {
+      url: "//cdn.datatables.net/plug-ins/1.12.1/i18n/fr-FR.json",
+    },
+    scrollX: true,
+    bInfo: true,
+    lengthChange: true,
+    searching: true,
+    paging: true,
+    fixedColumns: {
+      leftColumns: 1,
+      rightColumns: 1,
+    },
+    columnDefs: [
+      {
+        orderable: true,
+        targets: 0,
+      },
+    ],
+    select: {
+      style: "multi+shift",
+      selector: "td:first-child",
+    },
+    order: [[1, "asc"]],
+  });
+});
 export default {
   data() {
     return {
-      roomsData: null,
+      grpacks: null,
+      aclick: false,
     };
   },
-  methods: {
-    myTable() {
-      $(document).ready(function () {
-        $("#myTable").DataTable();
+  mounted() {
+    axios
+      .get("http://localhost:8080/grpacks")
+      .then((response) => {
+        //console.log(response)
+        this.grpacks = response.data;
+      })
+      .catch((error) => {
+        //console.log(error);
+        this.errored = true;
       });
-    },
-
-    getRoomsDataTable() {
-      axios
-        .get("http://localhost:8080/grpacks")
-        .then((res) => {
-          this.roomsData = res.data;
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    },
   },
 };
 </script>
