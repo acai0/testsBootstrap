@@ -88,6 +88,8 @@
   </div>
 </template>
 <script>
+import { ref, onMounted } from "vue";
+/*
 $(document).ready(function () {
   $("#accordionExample").on("shown.bs.collapse", function () {
     $.each($.fn.dataTable.tables(true), function () {
@@ -96,7 +98,7 @@ $(document).ready(function () {
   });
   $("#example").DataTable({
     scrollX: true,
-    bInfo: false,
+    bInfo: false,  import { ref, onMounted } from "vue";  ii  import { ref, onMounted } from "vue";mport { ref, onMounted } from "vue";
     lengthChange: false,
     searching: true,
     paging: true,
@@ -118,6 +120,7 @@ $(document).ready(function () {
     order: [[1, "asc"]],
   });
 });
+*/
 export default {
   data() {
     return {

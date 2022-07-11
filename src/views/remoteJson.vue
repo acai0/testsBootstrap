@@ -50,17 +50,58 @@
                         v-for="(grpack, index) in grpack.packages"
                         :key="index"
                       >
-                        <td :class="grpack.os" id="os">
-                          {{ grpack.os }}
-                        </td>
-                        <td>{{ grpack.package_name }}</td>
-                        <td>
+                        <td v-if="grpack.os == 'windows'">
                           <i
+                            class="bi bi-windows"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Windows"
+                          />
+                        </td>
+                        <td v-else-if="grpack.os == 'ubuntu'">
+                          <i
+                            class="bi bi-box2-fill"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Ubuntu/Debian"
+                          />
+                        </td>
+
+                        <td v-else-if="grpack.os == 'macos'">
+                          <i
+                            class="bi bi-apple"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="MacOS"
+                          />
+                        </td>
+                        <td>
+                          <div
+                            v-if="grpack.ensure === 'latest'"
+                            class="bi bi-arrow-repeat"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Mise à jour automatique"
+                          />
+                          <div
+                            v-else-if="grpack.ensure === 'present'"
                             class="bi bi-unlock-fill"
                             data-bs-toggle="tooltip"
                             data-bs-placement="top"
                             title="Version maintenue"
-                          />{{ grpack.upstream_latest_version }}
+                          >
+                            {{ grpack.upstream_latest_version }}
+                          </div>
+
+                          <div
+                            v-else
+                            class="bi bi-lock-fill"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Version non maintenue"
+                          >
+                            {{ grpack.ensure }}
+                          </div>
                         </td>
                         <td>
                           <code>{{ grpack.requested_modules }}</code>
@@ -78,6 +119,15 @@
         </div>
       </div>
     </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
     <!--
     <button @click="test">test grpack</button>
     <grpackArray v-if="ok" /> 
@@ -99,6 +149,9 @@ $(document).ready(function () {
         });
     });
 });
+var x = "3.8";
+console.log(typeof x);
+
 import grpackArray from "../components/grpackArray.vue";
 import axios from "axios";
 import ref from "vue";

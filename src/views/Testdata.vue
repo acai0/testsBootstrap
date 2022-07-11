@@ -15,12 +15,6 @@
           <td>{{ grpack.modified }}</td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-          <th>Grpack</th>
-          <th>Modified</th>
-        </tr>
-      </tfoot>
     </table>
   </div>
 </template>

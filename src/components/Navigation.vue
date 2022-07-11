@@ -80,6 +80,9 @@
                 <b-dropdown-item href="/testdata"
                   >Test datatable</b-dropdown-item
                 >
+                <b-dropdown-item href="/datacoll"
+                  >DataTable Coll</b-dropdown-item
+                >
               </b-nav-item-dropdown>
             </li>
           </ul>

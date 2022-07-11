@@ -11,6 +11,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import "datatables.net-bs5";
+import "datatables.net-buttons-bs5";
 
 Vue.use(infiniteScroll);
 

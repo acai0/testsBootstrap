@@ -123,6 +123,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Testdata.vue"),
   },
+  {
+    path: "/datacoll",
+    name: "/datacoll",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/DataColl.vue"),
+  },
 ];
 
 const router = new VueRouter({
