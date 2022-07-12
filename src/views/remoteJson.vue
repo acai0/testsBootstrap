@@ -75,6 +75,7 @@
                             title="MacOS"
                           />
                         </td>
+                        <td>{{ grpack.package_name }}</td>
                         <td>
                           <div
                             v-if="grpack.ensure === 'latest'"
@@ -103,6 +104,7 @@
                             {{ grpack.ensure }}
                           </div>
                         </td>
+
                         <td>
                           <code>{{ grpack.requested_modules }}</code>
                         </td>
