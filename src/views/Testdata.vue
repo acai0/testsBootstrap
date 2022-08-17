@@ -5,87 +5,60 @@
     <table id="example" class="display" style="width: 100%">
       <thead>
         <tr>
+          <th></th>
           <th>Grpack</th>
-          <!-- <th>OS</th> -->
+
           <th>Modified</th>
+          <th>OS</th>
         </tr>
       </thead>
       <tbody>
+        <!--
         <tr v-for="grpack in grpacks" :key="grpack.id">
+          <td><i class="bi bi-plus-circle-fill" style="color: green"></i></td>
           <td>{{ grpack.id }}</td>
-          <!--
-          <div id="os" v-for="(grpack, index) in grpack.packages" :key="index">
-            <i
-              v-if="grpack.os == 'windows'"
-              class="bi bi-windows"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              style="color: #05bdda"
-              title="Windows"
-              >&nbsp;</i
+          <td>
+            <div
+              id="os"
+              v-for="(grpack, index) in grpack.packages"
+              :key="index"
             >
-            <i
-              v-else-if="grpack.os == 'ubuntu'"
-              class="bi bi-box2-fill"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              style="color: #d66c02"
-              title="Ubuntu/Debian"
-              >&nbsp;</i
-            >
-            <i
-              v-else-if="grpack.os == 'macos'"
-              class="bi bi-apple"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              title="MacOS"
-            >
-              &nbsp;</i
-            >
-          </div>
--->
+              <i
+                v-if="grpack.os == 'windows'"
+                class="bi bi-windows"
+                title="Windows"
+                style="color: #05bdda"
+              >
+                &nbsp;
+              </i>
+              <i
+                v-else-if="grpack.os == 'ubuntu'"
+                class="bi bi-box2-fill"
+                title="Ubuntu/Debian"
+                style="color: #d66c02"
+              >
+                &nbsp;
+              </i>
+              <i
+                v-else-if="grpack.os == 'macos'"
+                class="bi bi-apple"
+                title="MacOS"
+              >
+                &nbsp;
+              </i>
+            </div>
+          </td>
+
           <td>{{ grpack.modified }}</td>
         </tr>
+        -->
       </tbody>
     </table>
   </div>
 </template>
 <script>
-import axios from "axios";
-$(document).ready(function () {
-  $("#accordionExample").on("shown.bs.collapse", function () {
-    $.each($.fn.dataTable.tables(true), function () {
-      $(this).DataTable().columns.adjust().draw();
-    });
-  });
-  $("#example").DataTable({
-    dom: "Plfrtip",
-
-    language: {
-      url: "//cdn.datatables.net/plug-ins/1.12.1/i18n/fr-FR.json",
-    },
-    scrollX: true,
-    bInfo: true,
-    lengthChange: true,
-    searching: true,
-    paging: true,
-    fixedColumns: {
-      leftColumns: 1,
-      rightColumns: 1,
-    },
-    columnDefs: [
-      {
-        orderable: true,
-        targets: 0,
-      },
-    ],
-    select: {
-      style: "multi+shift",
-      selector: "td:first-child",
-    },
-    order: [[1, "asc"]],
-  });
-});
+//import axios from "axios";
+/*
 export default {
   data() {
     return {
@@ -105,7 +78,129 @@ export default {
         this.errored = true;
       });
   },
-};
+};*/
+
+function format(d) {
+  // `d` is the original data object for the row
+  return (
+    '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+    "<tr>" +
+    "<td>OS</td>" +
+    "<td>" +
+    d.os +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td>Paquet</td>" +
+    "<td>" +
+    d.package_name +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td>Version</td>" +
+    "<td>" +
+    d.version +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td>Option</td>" +
+    "<td>" +
+    d.requested_modules +
+    "</td>" +
+    "</tr>" +
+    "<tr>" +
+    "<td>Ensure</td>" +
+    "<td>" +
+    d.ensure +
+    "</td>" +
+    "</tr>" +
+    "</table>"
+  );
+}
+$(document).ready(function () {
+  $("#example").DataTable({
+    ajax: {
+      url: "http://localhost:8080/grpacks",
+      dataSrc: "",
+    },
+
+    columns: [
+      {
+        className: "details-control",
+        orderable: false,
+        data: null,
+        defaultContent:
+          "<i class='bi bi-plus-circle-fill' style='color: green'></i>",
+      },
+      { data: "id" },
+      { data: "modified" },
+      {
+        data: "packages",
+        render: function (data, type, row) {
+          var arr = [];
+          data.forEach(function (item) {
+            if (row == "os") {
+              if (data === "ubuntu") {
+                return `<i
+                 class="bi bi-box2-fill"
+                style="color: #d66c02"
+              />`;
+              } else if (data === "windows") {
+                return `<i
+                class="bi bi-windows"
+                style="color: #05bdda"
+              />`;
+              } else if (data === "macos") {
+                return `<i
+                class="bi bi-apple"
+                title="MacOS"/>`;
+              }
+            }
+            arr.push(item.os);
+          });
+          return arr.join("</br>");
+        },
+      },
+    ],
+    dom: "Plfrtip",
+    /*
+    columnDefs: [
+      {
+        searchPanes: {
+          show: true,
+        },
+        targets: [3, 4],
+      },
+    ],*/
+
+    language: {
+      url: "//cdn.datatables.net/plug-ins/1.12.1/i18n/fr-FR.json",
+    },
+    /*
+    scrollX: true,
+    bInfo: true,
+    lengthChange: true,
+    searching: true,
+    paging: true,
+    fixedColumns: {
+      leftColumns: 1,
+      rightColumns: 1,
+    },
+    */
+    columnDefs: [
+      {
+        orderable: true,
+        targets: 0,
+        className: "dtr-control",
+      },
+    ],
+    select: {
+      //style: "multi+shift",
+      selector: "td:first-child",
+    },
+    order: [[1, "asc"]],
+  });
+});
 </script>
 <style>
 #os {

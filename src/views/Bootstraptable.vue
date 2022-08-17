@@ -310,7 +310,7 @@ $(document).ready(function () {
         searchPanes: {
           show: true,
         },
-        targets: [1],
+        targets: [2, 3, 4],
       },
     ],
     data: mdata,
@@ -319,7 +319,8 @@ $(document).ready(function () {
         className: "details-control",
         orderable: false,
         data: null,
-        defaultContent: "",
+        defaultContent:
+          "<i class='bi bi-plus-circle-fill' style='color: green'></i>",
       },
       {
         data: "name",
