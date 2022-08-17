@@ -7,6 +7,10 @@
       infinite-scroll-disabled="busy"
       infinite-scroll-distance="limit"
     >
+      <a id="goTop"
+        ><i class="bi bi-arrow-up"></i> Retourner en haut
+        <i class="bi bi-arrow-up"></i
+      ></a>
       <div v-for="grpack in grpacks" :key="grpack.id">
         <div class="accordion" id="accordionFlushExample">
           <div class="accordion-item">
@@ -23,6 +27,36 @@
                 v-on:click="aclick = true"
               >
                 <strong>{{ grpack.id }} </strong>
+                <div v-for="(grpack, index) in grpack.packages" :key="index">
+                  <strong v-if="grpack.os == 'windows'">
+                    &nbsp;
+                    <i
+                      class="bi bi-windows"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Windows"
+                    />
+                  </strong>
+                  <strong v-else-if="grpack.os == 'ubuntu'">
+                    &nbsp;
+                    <i
+                      class="bi bi-box2-fill"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Ubuntu/Debian"
+                    />
+                  </strong>
+
+                  <strong v-else-if="grpack.os == 'macos'">
+                    &nbsp;
+                    <i
+                      class="bi bi-apple"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="MacOS"
+                    />
+                  </strong>
+                </div>
               </button>
             </h2>
 
@@ -121,7 +155,14 @@
         </div>
       </div>
     </div>
-    <nav aria-label="Page navigation example">
+    <div class="card-footer">
+      <jw-pagination
+        :pageSize="10"
+        :items="grpacks"
+        @changePage="onChangePage"
+      ></jw-pagination>
+    </div>
+    <!--  <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
         <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -129,7 +170,7 @@
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item"><a class="page-link" href="#">Next</a></li>
       </ul>
-    </nav>
+    </nav> -->
     <!--
     <button @click="test">test grpack</button>
     <grpackArray v-if="ok" /> 
@@ -137,39 +178,65 @@
   --></div>
 </template>
 <script>
+// boutton Retourner en haut
 $(document).ready(function () {
-  //$("td#os").hide();
-
-  $(".dropdown")
-    .find(".checkbox")
-    .click(function () {
-      $("td#os").hide();
-      $(".dropdown")
-        .find(".checkbox:checked")
-        .each(function () {
-          $("td#os" + $(this).attr("rel")).hide();
-        });
-    });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $("#goTop").stop().animate(
+        {
+          top: "20px",
+        },
+        500
+      );
+    } else {
+      $("#goTop").stop().animate(
+        {
+          top: "-100px",
+        },
+        500
+      );
+    }
+  });
+  $("#goTop").click(function () {
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: 0,
+        },
+        500,
+        function () {
+          $("#goTop").stop().animate(
+            {
+              top: "-100px",
+            },
+            500
+          );
+        }
+      );
+  });
 });
+/*
 var x = "3.8";
 console.log(typeof x);
+*/
 
 import grpackArray from "../components/grpackArray.vue";
 import axios from "axios";
 import ref from "vue";
-
 export default {
   components: {
     grpackArray,
   },
   data() {
     return {
-      grpacks: null,
+      grpacks: [],
       tab: "",
       aclick: false,
       ok: false,
       limit: 10,
       busy: false,
+      grpacks: null,
     };
   },
   mounted() {
@@ -191,8 +258,10 @@ export default {
         //console.log(error);
         this.errored = true;
       }); */
+    /*
     console.log(this.$refs);
     console.log(this.$refs.button);
+    */
   },
   methods: {
     loadMore() {
@@ -200,7 +269,7 @@ export default {
       this.busy = true;
       axios.get("http://localhost:8080/grpacks").then((response) => {
         this.grpacks = response.data;
-        console.log(this.grpacks);
+        //console.log(this.grpacks);
         const append = response.data.slice(
           this.grpacks.length,
           this.grpacks.length + this.limit
@@ -209,12 +278,15 @@ export default {
         this.busy = false;
       });
     },
-
     test() {
       this.ok = !this.ok;
     },
+    onChangePage() {
+      //console.log(grpacks);
+      // update page of items
+      this.grpacks = grpacks;
+    },
   },
-
   created() {
     this.loadMore();
   },
@@ -227,6 +299,17 @@ code {
 }
 th {
   width: 25em;
+}
+#goTop {
+  background: grey;
+  color: white;
+  padding: 5px;
+  position: fixed;
+  top: -100px;
+  right: 10px;
+}
+.card-footer {
+  background: white;
 }
 </style>
 <!-- Prendre tableau et mettre dans un composant, tester raffraichissement au scrolling, recherche, staloverflow, medium, dev.to: les bonnes pratiques (liste, stockage de données) -->

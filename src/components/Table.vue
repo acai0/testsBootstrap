@@ -4,8 +4,8 @@
     <table class="condense table" id="datatable">
       <thead>
         <tr>
-          <th>OS</th>
           <th>Paquet</th>
+          <th>Modified</th>
         </tr>
       </thead>
       <tbody>

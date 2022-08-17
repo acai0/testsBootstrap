@@ -6,6 +6,7 @@
       <thead>
         <tr>
           <th>Grpack</th>
+          <th>OS</th>
           <th>Modified</th>
         </tr>
       </thead>
@@ -19,6 +20,7 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 $(document).ready(function () {
   $("#accordionExample").on("shown.bs.collapse", function () {
     $.each($.fn.dataTable.tables(true), function () {
@@ -26,6 +28,8 @@ $(document).ready(function () {
     });
   });
   $("#example").DataTable({
+    dom: "Plfrtip",
+
     language: {
       url: "//cdn.datatables.net/plug-ins/1.12.1/i18n/fr-FR.json",
     },

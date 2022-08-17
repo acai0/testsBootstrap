@@ -24,13 +24,13 @@
               <b-dropdown variant="light" text="Gestionnaire de paquet">
                 <!--<div v-for="grpack in grpacks" :key="grpack.id"> -->
                 <!-- <div v-for="(grpack, index) in grpack.packages" :key="index"> -->
-                <b-checkbox id="windows">
+                <b-checkbox :checked="true">
                   <!-- Affichage du nom des checkbox -->
                   <!-- {{ grpack.os }} -->
                   Chocolatey
                 </b-checkbox>
-                <b-checkbox rel="ubuntu"> Ubuntu/ Debian </b-checkbox>
-                <b-checkbox rel="macos"> Homebrew</b-checkbox>
+                <b-checkbox :checked="true"> Ubuntu/ Debian </b-checkbox>
+                <b-checkbox :checked="true"> Homebrew</b-checkbox>
               </b-dropdown>
             </li>
             <li class="item">
@@ -82,6 +82,9 @@
                 >
                 <b-dropdown-item href="/datacoll"
                   >DataTable Coll</b-dropdown-item
+                >
+                <b-dropdown-item href="/bootstraptable"
+                  >Bootstrap Table</b-dropdown-item
                 >
               </b-nav-item-dropdown>
             </li>
@@ -182,10 +185,13 @@ $(document).ready(function () {
     });
 });
 
+import axios from "axios";
+
 export default {
   data() {
     return {
       grpacks: null,
+      checked: true,
     };
   },
   mounted() {
@@ -200,7 +206,11 @@ export default {
         this.errored = true;
       });
   },
-  methods: {},
+  methods: {
+    toggle_checkbox() {
+      this.checked = !this.checked;
+    },
+  },
 };
 </script>
 <style scoped>
@@ -214,8 +224,6 @@ export default {
   color: #fff;
   text-decoration: none;
   justify-content: center;
-  line-height: 15px;
-  padding-bottom: 0px;
 }
 
 .link {

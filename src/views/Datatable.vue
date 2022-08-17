@@ -5,6 +5,7 @@
 </template>
 <script>
 import JqueryTable from "../components/Table.vue";
+import axios from "axios";
 export default {
   name: "App",
   components: {

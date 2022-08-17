@@ -15,7 +15,6 @@
           <th>Start date</th>
           <th>Salary</th>
           <th>Extn.</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +27,6 @@
           <td>2011-04-25</td>
           <td>$320,800</td>
           <td>5421</td>
-          <td></td>
         </tr>
         <tr>
           <td>Garrett</td>
@@ -39,7 +37,6 @@
           <td>2011-07-25</td>
           <td>$170,750</td>
           <td>8422</td>
-          <td></td>
         </tr>
         <tr>
           <td>Ashton</td>
@@ -50,7 +47,6 @@
           <td>2009-01-12</td>
           <td>$86,000</td>
           <td>1562</td>
-          <td></td>
         </tr>
         <tr>
           <td>Cedric</td>
@@ -61,7 +57,6 @@
           <td>2012-03-29</td>
           <td>$433,060</td>
           <td>6224</td>
-          <td></td>
         </tr>
         <tr>
           <td>Airi</td>
@@ -72,7 +67,6 @@
           <td>2008-11-28</td>
           <td>$162,700</td>
           <td>5407</td>
-          <td></td>
         </tr>
         <tr>
           <td>Brielle</td>
@@ -83,7 +77,6 @@
           <td>2012-12-02</td>
           <td>$372,000</td>
           <td>4804</td>
-          <td></td>
         </tr>
         <tr>
           <td>Herrod</td>
@@ -94,7 +87,6 @@
           <td>2012-08-06</td>
           <td>$137,500</td>
           <td>9608</td>
-          <td></td>
         </tr>
         <tr>
           <td>Rhona</td>
@@ -105,7 +97,6 @@
           <td>2010-10-14</td>
           <td>$327,900</td>
           <td>6200</td>
-          <td></td>
         </tr>
         <tr>
           <td>Colleen</td>
@@ -116,7 +107,6 @@
           <td>2009-09-15</td>
           <td>$205,500</td>
           <td>2360</td>
-          <td></td>
         </tr>
         <tr>
           <td>Sonya</td>
@@ -127,7 +117,6 @@
           <td>2008-12-13</td>
           <td>$103,600</td>
           <td>1667</td>
-          <td></td>
         </tr>
         <tr>
           <td>Jena</td>
@@ -138,7 +127,6 @@
           <td>2008-12-19</td>
           <td>$90,560</td>
           <td>3814</td>
-          <td></td>
         </tr>
         <tr>
           <td>Quinn</td>
@@ -149,7 +137,6 @@
           <td>2013-03-03</td>
           <td>$342,000</td>
           <td>9497</td>
-          <td></td>
         </tr>
         <tr>
           <td>Charde</td>
@@ -160,7 +147,6 @@
           <td>2008-10-16</td>
           <td>$470,600</td>
           <td>6741</td>
-          <td></td>
         </tr>
         <tr>
           <td>Haley</td>
@@ -171,7 +157,6 @@
           <td>2012-12-18</td>
           <td>$313,500</td>
           <td>3597</td>
-          <td></td>
         </tr>
         <tr>
           <td>Tatyana</td>
@@ -182,7 +167,6 @@
           <td>2010-03-17</td>
           <td>$385,750</td>
           <td>1965</td>
-          <td></td>
         </tr>
         <tr>
           <td>Michael</td>
@@ -193,7 +177,6 @@
           <td>2012-11-27</td>
           <td>$198,500</td>
           <td>1581</td>
-          <td></td>
         </tr>
         <tr>
           <td>Paul</td>
@@ -204,7 +187,6 @@
           <td>2010-06-09</td>
           <td>$725,000</td>
           <td>3059</td>
-          <td></td>
         </tr>
         <tr>
           <td>Gloria</td>
@@ -215,7 +197,6 @@
           <td>2009-04-10</td>
           <td>$237,500</td>
           <td>1721</td>
-          <td></td>
         </tr>
         <tr>
           <td>Bradley</td>
@@ -226,7 +207,6 @@
           <td>2012-10-13</td>
           <td>$132,000</td>
           <td>2558</td>
-          <td></td>
         </tr>
         <tr>
           <td>Dai</td>
@@ -237,7 +217,6 @@
           <td>2012-09-26</td>
           <td>$217,500</td>
           <td>2290</td>
-          <td></td>
         </tr>
         <tr>
           <td>Jenette</td>
@@ -248,7 +227,6 @@
           <td>2011-09-03</td>
           <td>$345,000</td>
           <td>1937</td>
-          <td></td>
         </tr>
         <tr>
           <td>Yuri</td>
@@ -259,7 +237,6 @@
           <td>2009-06-25</td>
           <td>$675,000</td>
           <td>6154</td>
-          <td></td>
         </tr>
         <tr>
           <td>Caesar</td>
@@ -270,7 +247,6 @@
           <td>2011-12-12</td>
           <td>$106,450</td>
           <td>8330</td>
-          <td></td>
         </tr>
         <tr>
           <td>Doris</td>
@@ -281,7 +257,6 @@
           <td>2010-09-20</td>
           <td>$85,600</td>
           <td>3023</td>
-          <td></td>
         </tr>
         <tr>
           <td>Angelica</td>
@@ -292,7 +267,6 @@
           <td>2009-10-09</td>
           <td>$1,200,000</td>
           <td>5797</td>
-          <td></td>
         </tr>
         <tr>
           <td>Gavin</td>
@@ -303,7 +277,6 @@
           <td>2010-12-22</td>
           <td>$92,575</td>
           <td>8822</td>
-          <td></td>
         </tr>
         <tr>
           <td>Jennifer</td>
@@ -314,7 +287,6 @@
           <td>2010-11-14</td>
           <td>$357,650</td>
           <td>9239</td>
-          <td></td>
         </tr>
         <tr>
           <td>Brenden</td>
@@ -325,7 +297,6 @@
           <td>2011-06-07</td>
           <td>$206,850</td>
           <td>1314</td>
-          <td></td>
         </tr>
         <tr>
           <td>Fiona</td>
@@ -336,7 +307,6 @@
           <td>2010-03-11</td>
           <td>$850,000</td>
           <td>2947</td>
-          <td></td>
         </tr>
         <tr>
           <td>Shou</td>
@@ -347,7 +317,6 @@
           <td>2011-08-14</td>
           <td>$163,000</td>
           <td>8899</td>
-          <td></td>
         </tr>
         <tr>
           <td>Michelle</td>
@@ -358,7 +327,6 @@
           <td>2011-06-02</td>
           <td>$95,400</td>
           <td>2769</td>
-          <td></td>
         </tr>
         <tr>
           <td>Suki</td>
@@ -369,7 +337,6 @@
           <td>2009-10-22</td>
           <td>$114,500</td>
           <td>6832</td>
-          <td></td>
         </tr>
         <tr>
           <td>Prescott</td>
@@ -380,7 +347,6 @@
           <td>2011-05-07</td>
           <td>$145,000</td>
           <td>3606</td>
-          <td></td>
         </tr>
         <tr>
           <td>Gavin</td>
@@ -391,7 +357,6 @@
           <td>2008-10-26</td>
           <td>$235,500</td>
           <td>2860</td>
-          <td></td>
         </tr>
         <tr>
           <td>Martena</td>
@@ -402,7 +367,6 @@
           <td>2011-03-09</td>
           <td>$324,050</td>
           <td>8240</td>
-          <td></td>
         </tr>
         <tr>
           <td>Unity</td>
@@ -413,7 +377,6 @@
           <td>2009-12-09</td>
           <td>$85,675</td>
           <td>5384</td>
-          <td></td>
         </tr>
         <tr>
           <td>Howard</td>
@@ -424,7 +387,6 @@
           <td>2008-12-16</td>
           <td>$164,500</td>
           <td>7031</td>
-          <td></td>
         </tr>
         <tr>
           <td>Hope</td>
@@ -435,7 +397,6 @@
           <td>2010-02-12</td>
           <td>$109,850</td>
           <td>6318</td>
-          <td></td>
         </tr>
         <tr>
           <td>Vivian</td>
@@ -446,7 +407,6 @@
           <td>2009-02-14</td>
           <td>$452,500</td>
           <td>9422</td>
-          <td></td>
         </tr>
         <tr>
           <td>Timothy</td>
@@ -457,7 +417,6 @@
           <td>2008-12-11</td>
           <td>$136,200</td>
           <td>7580</td>
-          <td></td>
         </tr>
         <tr>
           <td>Jackson</td>
@@ -468,7 +427,6 @@
           <td>2008-09-26</td>
           <td>$645,750</td>
           <td>1042</td>
-          <td></td>
         </tr>
         <tr>
           <td>Olivia</td>
@@ -479,7 +437,6 @@
           <td>2011-02-03</td>
           <td>$234,500</td>
           <td>2120</td>
-          <td></td>
         </tr>
         <tr>
           <td>Bruno</td>
@@ -490,7 +447,6 @@
           <td>2011-05-03</td>
           <td>$163,500</td>
           <td>6222</td>
-          <td></td>
         </tr>
         <tr>
           <td>Sakura</td>
@@ -501,7 +457,6 @@
           <td>2009-08-19</td>
           <td>$139,575</td>
           <td>9383</td>
-          <td></td>
         </tr>
         <tr>
           <td>Thor</td>
@@ -512,7 +467,6 @@
           <td>2013-08-11</td>
           <td>$98,540</td>
           <td>8327</td>
-          <td></td>
         </tr>
         <tr>
           <td>Finn</td>
@@ -523,7 +477,6 @@
           <td>2009-07-07</td>
           <td>$87,500</td>
           <td>2927</td>
-          <td></td>
         </tr>
         <tr>
           <td>Serge</td>
@@ -534,7 +487,6 @@
           <td>2012-04-09</td>
           <td>$138,575</td>
           <td>8352</td>
-          <td></td>
         </tr>
         <tr>
           <td>Zenaida</td>
@@ -545,7 +497,6 @@
           <td>2010-01-04</td>
           <td>$125,250</td>
           <td>7439</td>
-          <td></td>
         </tr>
         <tr>
           <td>Zorita</td>
@@ -556,7 +507,6 @@
           <td>2012-06-01</td>
           <td>$115,000</td>
           <td>4389</td>
-          <td></td>
         </tr>
         <tr>
           <td>Jennifer</td>
@@ -567,7 +517,6 @@
           <td>2013-02-01</td>
           <td>$75,650</td>
           <td>3431</td>
-          <td></td>
         </tr>
         <tr>
           <td>Cara</td>
@@ -578,7 +527,6 @@
           <td>2011-12-06</td>
           <td>$145,600</td>
           <td>3990</td>
-          <td></td>
         </tr>
         <tr>
           <td>Hermione</td>
@@ -589,7 +537,6 @@
           <td>2011-03-21</td>
           <td>$356,250</td>
           <td>1016</td>
-          <td></td>
         </tr>
         <tr>
           <td>Lael</td>
@@ -600,7 +547,6 @@
           <td>2009-02-27</td>
           <td>$103,500</td>
           <td>6733</td>
-          <td></td>
         </tr>
         <tr>
           <td>Jonas</td>
@@ -611,7 +557,6 @@
           <td>2010-07-14</td>
           <td>$86,500</td>
           <td>8196</td>
-          <td></td>
         </tr>
         <tr>
           <td>Shad</td>
@@ -622,7 +567,6 @@
           <td>2008-11-13</td>
           <td>$183,000</td>
           <td>6373</td>
-          <td></td>
         </tr>
         <tr>
           <td>Michael</td>
@@ -633,7 +577,6 @@
           <td>2011-06-27</td>
           <td>$183,000</td>
           <td>5384</td>
-          <td></td>
         </tr>
         <tr>
           <td>Donna</td>
@@ -644,7 +587,6 @@
           <td>2011-01-25</td>
           <td>$112,000</td>
           <td>4226</td>
-          <td></td>
         </tr>
       </tbody>
     </table>
@@ -652,21 +594,11 @@
 </template>
 <script>
 $(document).ready(function () {
-  $("#example").DataTable({
-    responsive: {
-      details: {
-        type: "column",
-        target: -1,
-      },
-    },
-    columnDefs: [
-      {
-        className: "dtr-control",
-        orderable: false,
-        targets: -1,
-      },
-    ],
+  var table = $("#example").DataTable({
+    responsive: true,
   });
+
+  //new $.fn.dataTable.FixedHeader(table);
 });
 </script>
 <style></style>

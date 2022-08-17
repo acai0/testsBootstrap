@@ -14,6 +14,9 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import "datatables.net-bs5";
 import "datatables.net-buttons-bs5";
 
+import JwPagination from "jw-vue-pagination";
+Vue.component("jw-pagination", JwPagination);
+
 Vue.use(infiniteScroll);
 
 //Vue.use(DataTables);

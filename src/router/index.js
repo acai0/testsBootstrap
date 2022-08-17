@@ -129,6 +129,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/DataColl.vue"),
   },
+  {
+    path: "/bootstraptable",
+    name: "/bootstraptable",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Bootstraptable.vue"),
+  },
+  {
+    path: "/testDatable",
+    name: "/testDatable",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/TestData.vue"),
+  },
 ];
 
 const router = new VueRouter({
