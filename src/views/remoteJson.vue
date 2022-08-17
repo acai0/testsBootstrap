@@ -34,6 +34,7 @@
                       class="bi bi-windows"
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
+                      style="color: #05bdda"
                       title="Windows"
                     />
                   </strong>
@@ -43,6 +44,7 @@
                       class="bi bi-box2-fill"
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
+                      style="color: #d66c02"
                       title="Ubuntu/Debian"
                     />
                   </strong>
@@ -89,6 +91,7 @@
                             class="bi bi-windows"
                             data-bs-toggle="tooltip"
                             data-bs-placement="top"
+                            style="color: #05bdda"
                             title="Windows"
                           />
                         </td>
@@ -97,6 +100,7 @@
                             class="bi bi-box2-fill"
                             data-bs-toggle="tooltip"
                             data-bs-placement="top"
+                            style="color: #d66c02"
                             title="Ubuntu/Debian"
                           />
                         </td>

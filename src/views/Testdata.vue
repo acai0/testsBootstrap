@@ -6,13 +6,44 @@
       <thead>
         <tr>
           <th>Grpack</th>
-          <th>OS</th>
+          <!-- <th>OS</th> -->
           <th>Modified</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="grpack in grpacks" :key="grpack.id">
           <td>{{ grpack.id }}</td>
+          <!--
+          <div id="os" v-for="(grpack, index) in grpack.packages" :key="index">
+            <i
+              v-if="grpack.os == 'windows'"
+              class="bi bi-windows"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              style="color: #05bdda"
+              title="Windows"
+              >&nbsp;</i
+            >
+            <i
+              v-else-if="grpack.os == 'ubuntu'"
+              class="bi bi-box2-fill"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              style="color: #d66c02"
+              title="Ubuntu/Debian"
+              >&nbsp;</i
+            >
+            <i
+              v-else-if="grpack.os == 'macos'"
+              class="bi bi-apple"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="MacOS"
+            >
+              &nbsp;</i
+            >
+          </div>
+-->
           <td>{{ grpack.modified }}</td>
         </tr>
       </tbody>
@@ -76,3 +107,8 @@ export default {
   },
 };
 </script>
+<style>
+#os {
+  display: inline-block;
+}
+</style>
