@@ -118,7 +118,7 @@ function format(d) {
   );
 }
 $(document).ready(function () {
-  $("#example").DataTable({
+  var table = $("#example").DataTable({
     ajax: {
       url: "http://localhost:8080/grpacks",
       dataSrc: "",
@@ -129,8 +129,7 @@ $(document).ready(function () {
         className: "details-control",
         orderable: false,
         data: null,
-        defaultContent:
-          "<i class='bi bi-plus-circle-fill' style='color: green'></i>",
+        defaultContent: "",
       },
       { data: "id" },
       { data: "modified" },
@@ -163,6 +162,7 @@ $(document).ready(function () {
       },
     ],
     dom: "Plfrtip",
+    select: false,
     /*
     columnDefs: [
       {
@@ -191,14 +191,30 @@ $(document).ready(function () {
       {
         orderable: true,
         targets: 0,
-        className: "dtr-control",
+        className: "dt-control",
       },
     ],
     select: {
       //style: "multi+shift",
-      selector: "td:first-child",
+      // selector: "td:first-child",
     },
     order: [[1, "asc"]],
+  });
+
+  // Add event listener for opening and closing details
+  $("#example tbody").on("click", "td.dt-control", function () {
+    var tr = $(this).closest("tr");
+    var row = table.row(tr);
+
+    if (row.child.isShown()) {
+      // This row is already open - close it
+      row.child.hide();
+      tr.removeClass("shown");
+    } else {
+      // Open this row
+      row.child(format(row.data())).show();
+      tr.addClass("shown");
+    }
   });
 });
 </script>
